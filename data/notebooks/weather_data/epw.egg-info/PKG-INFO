@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: epw
+Version: 0.0.0
+Summary: Lightweight Python package for editing EnergyPlus Weather (epw) files
+Home-page: https://github.com/building-energy/bredem2012
+Author: Steven Firth
+Author-email: s.k.firth@lboro.ac.uk
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<svg width="250mm" height="200mm" viewBox="0 0 2500 1500"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:ev="http://www.w3.org/2001/xml-events">
+<g font-family="Verdana" font-size="8">
+  <text x="200" y="40">Unused Non-Parent Objects:</text>
+  <text x="220" y="60">BLOCK1B:KITCHEN</text>
+  <text x="220" y="80">BLOCK1B:BATHROOM1</text>
+  <text x="220" y="100">BLOCK1B:ROOM1</text>
+  <text x="220" y="120">BLOCK1B:CORRIDOR</text>
+  <text x="220" y="140">BLOCK1B:BATHROOM</text>
+  <text x="220" y="160">BLOCK1B:LIVINGROOM</text>
+  <text x="220" y="180">BLOCK1B:ROOM</text>
+  <text x="220" y="200">BLOCK1B:KITCHEN IDEAL LOADS AIR</text>
+  <text x="220" y="220">BLOCK1B:BATHROOM1 IDEAL LOADS AIR</text>
+  <text x="220" y="240">BLOCK1B:ROOM1 IDEAL LOADS AIR</text>
+  <text x="220" y="260">BLOCK1B:CORRIDOR IDEAL LOADS AIR</text>
+  <text x="220" y="280">BLOCK1B:BATHROOM IDEAL LOADS AIR</text>
+  <text x="220" y="300">BLOCK1B:LIVINGROOM IDEAL LOADS AIR</text>
+  <text x="220" y="320">BLOCK1B:ROOM IDEAL LOADS AIR</text>
+  <text x="200" y="360">
+The following are not supported: objects related to controls or ZoneHVAC:IdealLoadsAirSystem</text>
+</g>
+</svg>

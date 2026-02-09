@@ -1,0 +1,16 @@
+ ReadVarsESO
+ processing:C:\Users\Lorenzo\Documents\python_envs\ICT4BD\eppy\in.rvi
+ input file:C:\Users\Lorenzo\Documents\python_envs\ICT4BD\eppy\eplusout.eso
+ output file:C:\Users\Lorenzo\Documents\python_envs\ICT4BD\eppy\eplusout.csv
+ getting all vars from:C:\Users\Lorenzo\Documents\python_envs\ICT4BD\eppy\eplusout.eso
+  number variables requested for output=        1280
+ ReadVars Run Time=00hr 00min 22.55sec
+ ReadVarsESO program completed successfully.
+ ReadVarsESO
+ processing:C:\Users\Lorenzo\Documents\python_envs\ICT4BD\eppy\in.mvi
+ input file:C:\Users\Lorenzo\Documents\python_envs\ICT4BD\eppy\eplusout.mtr
+ output file:C:\Users\Lorenzo\Documents\python_envs\ICT4BD\eppy\eplusmtr.csv
+ getting all vars from:C:\Users\Lorenzo\Documents\python_envs\ICT4BD\eppy\eplusout.mtr
+  number variables requested for output=          24
+ ReadVars Run Time=00hr 00min  0.39sec
+ ReadVarsESO program completed successfully.

@@ -1,0 +1,3 @@
+To run the docker container:
+
+sudo docker run --name building_design -d -v /home/cavallinux/Backup/Magistrale/ICT4SmartBuildings/data:/app/data -p 9999:8888 lorenzobottaccioli/building_design

@@ -1,0 +1,4 @@
+epw.egg-info/PKG-INFO
+epw.egg-info/SOURCES.txt
+epw.egg-info/dependency_links.txt
+epw.egg-info/top_level.txt

@@ -1,0 +1,686 @@
+Program Version,EnergyPlus, Version 9.6.0-f420c06a69, YMD=2025.09.19 11:05
+! <Version>, Version ID
+ Version, 9.6
+! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
+ Timesteps per Hour,  2, 30
+! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations, Minimum Plant Iterations, Maximum Plant Iterations
+ System Convergence Limits, 1, 25, 2, 8
+! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation, Do HVAC Sizing Simulation
+ Simulation Control, Yes, Yes, No, No, Yes, No
+! <Performance Precision Tradeoffs>, Use Coil Direct Simulation, Zone Radiant Exchange Algorithm, Override Mode, Number of Timestep In Hour, Force Euler Method, Minimum Number of Warmup Days, Force Suppress All Begin Environment Resets, Minimum System Timestep, MaxZoneTempDiff, MaxAllowedDelTemp
+ Performance Precision Tradeoffs, No, ScriptF, Normal, 2, No, 1, No, 1.0, 0.300, 2.0000E-003
+! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time
+ Output Reporting Tolerances, 1.110, 1.110, 
+! <Site:GroundTemperature:BuildingSurface>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:BuildingSurface,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00
+! <Site:GroundTemperature:FCfactorMethod>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:FCfactorMethod,   1.99,   1.11,   2.67,   5.12,  11.52,  16.46,  19.79,  20.81,  19.08,  15.24,  10.12,   5.36
+! <Site:GroundTemperature:Shallow>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Shallow,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00
+! <Site:GroundTemperature:Deep>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Deep,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00,  14.00
+! <Site:GroundReflectance>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:SnowModifier>, Normal, Daylighting {dimensionless}
+ Site:GroundReflectance:SnowModifier,   2.000,   2.000
+! <Site:GroundReflectance:Snow>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40
+! <Site:GroundReflectance:Snow:Daylighting>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow:Daylighting,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40,  0.40
+! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient-Internal,Temperature Modifier Coefficient-Internal
+Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
+! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
+Site:Location,San Francisco Intl Ap CA USA TMY3 WMO#=724940,37.62,-122.40,-8.00,2.00,101301,1.2040
+! <Site Water Mains Temperature Information>,Calculation Method{},Water Mains Temperature Schedule Name{},Annual Average Outdoor Air Temperature{C},Maximum Difference In Monthly Average Outdoor Air Temperatures{deltaC},Fixed Default Water Mains Temperature{C}
+Site Water Mains Temperature Information,FixedDefault,NA,NA,NA,10.0
+! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
+ Building Information,Building,0.000,Suburbs,4.00000E-002,0.40000,FullExterior,25,6
+! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
+Inside Convection Algorithm,TARP
+! <Outside Convection Algorithm>, Algorithm {SimpleCombined | TARP | MoWitt | DOE-2 | AdaptiveConvectionAlgorithm}
+Outside Convection Algorithm,DOE-2
+! <Sky Radiance Distribution>, Value {Anisotropic}
+Sky Radiance Distribution,Anisotropic
+! <Zone Air Solution Algorithm>, Value {ThirdOrderBackwardDifference | AnalyticalSolution | EulerMethod}
+ Zone Air Solution Algorithm, ThirdOrderBackwardDifference
+! <Zone Air Carbon Dioxide Balance Simulation>, Simulation {Yes/No}, Carbon Dioxide Concentration
+ Zone Air Carbon Dioxide Balance Simulation, No,N/A
+! <Zone Air Generic Contaminant Balance Simulation>, Simulation {Yes/No}, Generic Contaminant Concentration
+ Zone Air Generic Contaminant Balance Simulation, No,N/A
+! <Zone Air Mass Flow Balance Simulation>, Enforce Mass Balance, Adjust Zone Mixing and Return {AdjustMixingOnly | AdjustReturnOnly | AdjustMixingThenReturn | AdjustReturnThenMixing | None}, Adjust Zone Infiltration {AddInfiltration | AdjustInfiltration | None}, Infiltration Zones {MixingSourceZonesOnly | AllZones}
+ Zone Air Mass Flow Balance Simulation, No,N/A,N/A,N/A
+! <HVACSystemRootFindingAlgorithm>, Value {RegulaFalsi | Bisection | BisectionThenRegulaFalsi | RegulaFalsiThenBisection}
+ HVACSystemRootFindingAlgorithm, RegulaFalsi
+! <Environment:Site Atmospheric Variation>,Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Gradient Coefficient {K/m}
+Environment:Site Atmospheric Variation,0.220,370.000,6.500000E-003
+! <Surface Geometry>,Starting Corner,Vertex Input Direction,Coordinate System,Daylight Reference Point Coordinate System,Rectangular (Simple) Surface Coordinate System
+ Surface Geometry,LowerLeftCorner,Counterclockwise,WorldCoordinateSystem,RelativeCoordinateSystem,RelativeToZoneOrigin
+! <Surface Heat Transfer Algorithm>, Value {CTF - ConductionTransferFunction | EMPD - MoisturePenetrationDepthConductionTransferFunction | CondFD - ConductionFiniteDifference | HAMT - CombinedHeatAndMoistureFiniteElement} - Description,Inside Surface Max Temperature Limit{C}, Surface Convection Coefficient Lower Limit {W/m2-K}, Surface Convection Coefficient Upper Limit {W/m2-K}
+Surface Heat Transfer Algorithm, CTF - ConductionTransferFunction,2000,1.00E-008,1000.0
+! <Shading Summary>, Number of Fixed Detached Shades, Number of Building Detached Shades, Number of Attached Shades
+ Shading Summary,0,72,0
+! <Zone Summary>, Number of Zones, Number of Zone Surfaces, Number of SubSurfaces
+ Zone Summary,7,78,22
+! <Zone Information>,Zone Name,North Axis {deg},Origin X-Coordinate {m},Origin Y-Coordinate {m},Origin Z-Coordinate {m},Centroid X-Coordinate {m},Centroid Y-Coordinate {m},Centroid Z-Coordinate {m},Type,Zone Multiplier,Zone List Multiplier,Minimum X {m},Maximum X {m},Minimum Y {m},Maximum Y {m},Minimum Z {m},Maximum Z {m},Ceiling Height {m},Volume {m3},Zone Inside Convection Algorithm {Simple-Detailed-CeilingDiffuser-TrombeWall},Zone Outside Convection Algorithm {Simple-Detailed-Tarp-MoWitt-DOE-2-BLAST}, Floor Area {m2},Exterior Gross Wall Area {m2},Exterior Net Wall Area {m2},Exterior Window Area {m2}, Number of Surfaces, Number of SubSurfaces, Number of Shading SubSurfaces,  Part of Total Building Area
+ Zone Information, BLOCK1B:KITCHEN,0.0,0.00,0.00,0.00,8.94,10.74,1.50,1,1,1,7.69,10.18,8.89,12.59,0.00,3.00,3.00,20.54,TARP,DOE-2,6.85,18.59,16.40,1.94,6,2,0,Yes
+ Zone Information, BLOCK1B:BATHROOM1,0.0,0.00,0.00,0.00,6.94,10.74,1.50,1,1,1,6.18,7.69,8.89,12.59,0.00,3.00,3.00,13.33,TARP,DOE-2,4.44,4.51,3.29,1.04,7,2,0,Yes
+ Zone Information, BLOCK1B:ROOM1,0.0,0.00,0.00,0.00,4.18,11.24,1.50,1,1,1,2.18,6.19,9.89,12.59,0.00,3.00,3.00,24.58,TARP,DOE-2,8.19,20.09,14.81,4.77,7,3,0,Yes
+ Zone Information, BLOCK1B:CORRIDOR,0.0,0.00,0.00,0.00,5.56,8.89,1.50,1,1,1,4.94,6.19,7.89,9.89,0.00,3.00,3.00,6.10,TARP,DOE-2,2.03,0.00,0.00,0.00,7,5,0,Yes
+ Zone Information, BLOCK1B:BATHROOM,0.0,0.00,0.00,0.00,3.56,8.89,1.50,1,1,1,2.18,4.94,7.89,9.89,0.00,3.00,3.00,12.99,TARP,DOE-2,4.33,6.00,4.33,1.46,6,2,0,Yes
+ Zone Information, BLOCK1B:LIVINGROOM,0.0,0.00,0.00,0.00,8.51,6.05,1.50,1,1,1,6.18,11.43,3.59,8.89,0.00,3.00,3.00,56.03,TARP,DOE-2,18.68,35.40,28.85,4.18,16,5,0,Yes
+ Zone Information, BLOCK1B:ROOM,0.0,0.00,0.00,0.00,4.18,5.74,1.50,1,1,1,2.18,6.19,3.59,7.89,0.00,3.00,3.00,41.88,TARP,DOE-2,13.96,24.91,18.18,6.14,7,3,0,Yes
+! <Zone Internal Gains Nominal>,Zone Name, Floor Area {m2},# Occupants,Area per Occupant {m2/person},Occupant per Area {person/m2},Interior Lighting {W/m2},Electric Load {W/m2},Gas Load {W/m2},Other Load {W/m2},Hot Water Eq {W/m2},Steam Equipment {W/m2},Sum Loads per Area {W/m2},Outdoor Controlled Baseboard Heat
+ Zone Internal Gains Nominal, BLOCK1B:KITCHEN,6.85,0.2,31.278,3.197E-002,12.697,0.000,0.000,40.842,0.000,0.000,53.539,No
+ Zone Internal Gains Nominal, BLOCK1B:BATHROOM1,4.44,0.1,32.881,3.041E-002,11.773,0.000,0.000,2.014,0.000,0.000,13.787,No
+ Zone Internal Gains Nominal, BLOCK1B:ROOM1,8.19,0.2,33.108,3.020E-002,12.395,0.000,0.000,4.714,0.000,0.000,17.109,No
+ Zone Internal Gains Nominal, BLOCK1B:CORRIDOR,2.03,3.9E-002,52.521,1.904E-002,11.560,0.000,0.000,1.928,0.000,0.000,13.489,No
+ Zone Internal Gains Nominal, BLOCK1B:BATHROOM,4.33,0.1,32.333,3.093E-002,11.972,0.000,0.000,2.048,0.000,0.000,14.020,No
+ Zone Internal Gains Nominal, BLOCK1B:LIVINGROOM,18.68,0.9,20.133,4.967E-002,11.689,0.000,0.000,3.800,0.000,0.000,15.489,No
+ Zone Internal Gains Nominal, BLOCK1B:ROOM,13.96,0.4,35.344,2.829E-002,11.611,0.000,0.000,4.416,0.000,0.000,16.027,No
+! <People Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Number of People {},People/Floor Area {person/m2},Floor Area per person {m2/person},Fraction Radiant,Fraction Convected,Sensible Fraction Calculation,Activity level,ASHRAE 55 Warnings,Carbon Dioxide Generation Rate,Nominal Minimum Number of People,Nominal Maximum Number of People
+ People Internal Gains Nominal, PEOPLE BLOCK1B:KITCHEN,DWELL_DOMKITCHEN_OCC,BLOCK1B:KITCHEN,6.85,0.2,0.2,3.197E-002,31.278,0.300,0.700,AutoCalculate,ACTIVITY SCHEDULE 11476,No,3.8200E-008,0,0
+ People Internal Gains Nominal, PEOPLE BLOCK1B:BATHROOM1,DWELL_DOMTOILET_OCC,BLOCK1B:BATHROOM1,4.44,0.1,0.1,3.041E-002,32.881,0.300,0.700,AutoCalculate,ACTIVITY SCHEDULE 11483,No,3.8200E-008,0,0
+ People Internal Gains Nominal, PEOPLE BLOCK1B:ROOM1,DWELL_DOMBED_OCC,BLOCK1B:ROOM1,8.19,0.2,0.2,3.020E-002,33.108,0.300,0.700,AutoCalculate,ACTIVITY SCHEDULE 11491,No,3.8200E-008,0,0
+ People Internal Gains Nominal, PEOPLE BLOCK1B:CORRIDOR,DWELL_DOMCIRCULATION_OCC,BLOCK1B:CORRIDOR,2.03,3.9E-002,3.9E-002,1.904E-002,52.521,0.300,0.700,AutoCalculate,ACTIVITY SCHEDULE 11499,No,3.8200E-008,0,4E-002
+ People Internal Gains Nominal, PEOPLE BLOCK1B:BATHROOM,DWELL_DOMTOILET_OCC,BLOCK1B:BATHROOM,4.33,0.1,0.1,3.093E-002,32.333,0.300,0.700,AutoCalculate,ACTIVITY SCHEDULE 11507,No,3.8200E-008,0,0
+ People Internal Gains Nominal, PEOPLE BLOCK1B:LIVINGROOM,DWELL_DOMDINING_OCC,BLOCK1B:LIVINGROOM,18.68,0.9,0.9,4.967E-002,20.133,0.300,0.700,AutoCalculate,ACTIVITY SCHEDULE 11514,No,3.8200E-008,0,1
+ People Internal Gains Nominal, PEOPLE BLOCK1B:ROOM,DWELL_DOMBED_OCC,BLOCK1B:ROOM,13.96,0.4,0.4,2.829E-002,35.344,0.300,0.700,AutoCalculate,ACTIVITY SCHEDULE 11527,No,3.8200E-008,0,0
+! <Lights Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Lighting Level {W},Lights/Floor Area {W/m2},Lights per person {W/person},Fraction Return Air,Fraction Radiant,Fraction Short Wave,Fraction Convected,Fraction Replaceable,End-Use Category,Nominal Minimum Lighting Level {W},Nominal Maximum Lighting Level {W}
+ Lights Internal Gains Nominal, BLOCK1B:KITCHEN GENERAL LIGHTING,DWELL_DOMKITCHEN_LIGHT,BLOCK1B:KITCHEN,6.85,0.2,86.945,12.697,397.131,0.000,0.420,0.180,0.400,1.000,ELECTRIC EQUIPMENT#Block1B:Kitchen#GeneralLights,0.000,86.945
+ Lights Internal Gains Nominal, BLOCK1B:BATHROOM1 GENERAL LIGHTING,DWELL_DOMTOILET_LIGHT,BLOCK1B:BATHROOM1,4.44,0.1,52.310,11.773,387.112,0.000,0.420,0.180,0.400,1.000,ELECTRIC EQUIPMENT#Block1B:Bathroom1#GeneralLights,0.000,52.310
+ Lights Internal Gains Nominal, BLOCK1B:ROOM1 GENERAL LIGHTING,DWELL_DOMBED_LIGHT,BLOCK1B:ROOM1,8.19,0.2,101.572,12.395,410.374,0.000,0.420,0.180,0.400,1.000,ELECTRIC EQUIPMENT#Block1B:Room1#GeneralLights,0.000,101.572
+ Lights Internal Gains Nominal, BLOCK1B:CORRIDOR GENERAL LIGHTING,DWELL_DOMCIRCULATION_LIGHT,BLOCK1B:CORRIDOR,2.03,3.9E-002,23.519,11.560,607.169,0.000,0.420,0.180,0.400,1.000,ELECTRIC EQUIPMENT#Block1B:Corridor#GeneralLights,0.000,23.519
+ Lights Internal Gains Nominal, BLOCK1B:BATHROOM GENERAL LIGHTING,DWELL_DOMTOILET_LIGHT,BLOCK1B:BATHROOM,4.33,0.1,51.843,11.972,387.112,0.000,0.420,0.180,0.400,1.000,ELECTRIC EQUIPMENT#Block1B:Bathroom#GeneralLights,0.000,51.843
+ Lights Internal Gains Nominal, BLOCK1B:LIVINGROOM GENERAL LIGHTING,DWELL_DOMDINING_LIGHT,BLOCK1B:LIVINGROOM,18.68,0.9,218.299,11.689,235.337,0.000,0.420,0.180,0.400,1.000,ELECTRIC EQUIPMENT#Block1B:Livingroom#GeneralLights,0.000,218.299
+ Lights Internal Gains Nominal, BLOCK1B:ROOM GENERAL LIGHTING,DWELL_DOMBED_LIGHT,BLOCK1B:ROOM,13.96,0.4,162.100,11.611,410.374,0.000,0.420,0.180,0.400,1.000,ELECTRIC EQUIPMENT#Block1B:Room#GeneralLights,0.000,162.100
+! <OtherEquipment Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Equipment Level {W},Equipment/Floor Area {W/m2},Equipment per person {W/person},Fraction Latent,Fraction Radiant,Fraction Lost,Fraction Convected,Nominal Minimum Equipment Level {W},Nominal Maximum Equipment Level {W}
+ OtherEquipment Internal Gains Nominal, BLOCK1B:KITCHEN EQUIPMENT GAIN 1,DWELL_DOMKITCHEN_EQUIP,BLOCK1B:KITCHEN,6.85,0.2,279.672,40.842,1277.437,0.000,0.200,0.000,0.800,0.000,279.672
+ OtherEquipment Internal Gains Nominal, BLOCK1B:BATHROOM1 EQUIPMENT GAIN 1,DWELL_DOMTOILET_EQUIP,BLOCK1B:BATHROOM1,4.44,0.1,8.947,2.014,66.208,0.000,0.200,0.000,0.800,0.000,8.947
+ OtherEquipment Internal Gains Nominal, BLOCK1B:ROOM1 EQUIPMENT GAIN 1,DWELL_DOMBED_EQUIP,BLOCK1B:ROOM1,8.19,0.2,38.629,4.714,156.068,0.000,0.200,0.000,0.800,0.000,38.629
+ OtherEquipment Internal Gains Nominal, BLOCK1B:CORRIDOR EQUIPMENT GAIN 1,DWELL_DOMCIRCULATION_EQUIP,BLOCK1B:CORRIDOR,2.03,3.9E-002,3.922,1.928,101.265,0.000,0.200,0.000,0.800,0.000,3.922
+ OtherEquipment Internal Gains Nominal, BLOCK1B:BATHROOM EQUIPMENT GAIN 1,DWELL_DOMTOILET_EQUIP,BLOCK1B:BATHROOM,4.33,0.1,8.867,2.048,66.208,0.000,0.200,0.000,0.800,0.000,8.867
+ OtherEquipment Internal Gains Nominal, BLOCK1B:LIVINGROOM EQUIPMENT GAIN 1,DWELL_DOMDINING_EQUIP,BLOCK1B:LIVINGROOM,18.68,0.9,70.962,3.800,76.500,0.000,0.200,0.000,0.800,0.000,70.962
+ OtherEquipment Internal Gains Nominal, BLOCK1B:ROOM EQUIPMENT GAIN 1,DWELL_DOMBED_EQUIP,BLOCK1B:ROOM,13.96,0.4,61.648,4.416,156.068,0.000,0.200,0.000,0.800,0.000,61.648
+! <Solar View Factor Check Values>,Zone/Enclosure Name,Original Check Value,Calculated Fixed Check Value,Final Check Value,Number of Iterations,Fixed RowSum Convergence,Used RowSum Convergence
+Solar View Factor Check Values,BLOCK1B:KITCHEN,1.776357E-015,6.793005E-004,6.793005E-004,9,6.793005E-004,6.793005E-004
+Solar View Factor Check Values,BLOCK1B:BATHROOM1,3.552714E-015,6.730893E-004,6.730893E-004,10,6.730893E-004,6.730893E-004
+Solar View Factor Check Values,BLOCK1B:ROOM1,3.552714E-015,7.570022E-004,7.570022E-004,5,7.570022E-004,7.570022E-004
+Solar View Factor Check Values,BLOCK1B:CORRIDOR,3.552714E-015,7.543153E-004,7.543153E-004,6,7.543153E-004,7.543153E-004
+Solar View Factor Check Values,BLOCK1B:BATHROOM,2.664535E-015,8.062985E-004,8.062985E-004,9,8.062985E-004,8.062985E-004
+Solar View Factor Check Values,BLOCK1B:LIVINGROOM,1.421085E-014,7.245278E-004,7.245278E-004,11,7.245278E-004,7.245278E-004
+Solar View Factor Check Values,BLOCK1B:ROOM,3.552714E-015,7.254402E-004,7.254402E-004,10,7.254402E-004,7.254402E-004
+! <Construction CTF>,Construction Name,Index,#Layers,#CTFs,Time Step {hours},ThermalConductance {w/m2-K},OuterThermalAbsorptance,InnerThermalAbsorptance,OuterSolarAbsorptance,InnerSolarAbsorptance,Roughness
+! <Material CTF Summary>,Material Name,Thickness {m},Conductivity {w/m-K},Density {kg/m3},Specific Heat {J/kg-K},ThermalResistance {m2-K/w}
+! <Material:Air>,Material Name,ThermalResistance {m2-K/w}
+! <CTF>,Time,Outside,Cross,Inside,Flux (except final one)
+ Construction CTF,GROUNDFLOOR,   3,   4,  10,   0.500,     0.2638    ,   0.900,   0.900,   0.600,   0.780,Rough
+ Material CTF Summary,UREA FORMALDEHYDE FOAM_.1327,  0.1327,         0.040,     10.000,     1400.000,   3.318    
+ Material CTF Summary,CAST CONCRETE_.1,  0.1000,         1.130,   2000.000,     1000.000,  0.8850E-01
+ Material CTF Summary,FLOOR/ROOF SCREED_.O7,  0.0700,         0.410,   1200.000,      840.000,  0.1707    
+ Material CTF Summary,TIMBER FLOORING_.O3,  0.0300,         0.140,    650.000,     1200.000,  0.2143    
+ CTF,  10,      0.15421745E-13,      0.10761522E-14,      0.22134828E-12,     -0.43731614E-15
+ CTF,   9,     -0.59059518E-10,      0.16973960E-11,     -0.81017261E-09,      0.26314180E-12
+ CTF,   8,      0.49454778E-07,      0.11332133E-08,      0.76354068E-06,     -0.82187250E-09
+ CTF,   7,     -0.87704003E-05,      0.18507333E-06,     -0.15395682E-03,      0.61730404E-06
+ CTF,   6,      0.57952067E-03,      0.80407555E-05,      0.93515528E-02,     -0.84998827E-04
+ CTF,   5,     -0.15643742E-01,      0.99947070E-04,     -0.22022856    ,      0.37538651E-02
+ CTF,   4,      0.16762976    ,      0.36420797E-03,       2.2939011    ,     -0.66756511E-01
+ CTF,   3,     -0.76278896    ,      0.36875570E-03,      -10.682027    ,      0.51462052    
+ CTF,   2,       1.6334724    ,      0.84437224E-04,       23.333893    ,      -1.6583797    
+ CTF,   1,      -1.6294922    ,      0.23004446E-05,      -23.267532    ,       2.2033286    
+ CTF,   0,      0.60717981    ,      0.30758452E-09,       8.5337230    
+ Construction CTF,ROOF,   5,   4,   8,   0.500,     0.4950E-01,   0.900,   0.900,   0.850,   0.500,Rough
+ Material CTF Summary,ASPHALT 1_.O1,  0.0100,         0.700,   2100.000,     1000.000,  0.1429E-01
+ Material CTF Summary,MW GLASS WOOL (ROLLS)_.1445,  0.7982,         0.040,     12.000,      840.000,   19.96    
+ Material CTF Summary,3_RVAL_3,  0.0000,         0.000,      0.000,        0.000,  0.1800    
+ Material CTF Summary,PLASTERBOARD_.O13,  0.0130,         0.250,   2800.000,      896.000,  0.5200E-01
+ CTF,   8,      0.10680790E-07,      0.70504835E-14,      0.59789884E-08,     -0.64556114E-15
+ CTF,   7,     -0.17840772E-01,      0.68319045E-11,     -0.42279210E-02,      0.22640529E-08
+ CTF,   6,      0.46272368    ,      0.41433406E-07,      0.36514136    ,     -0.14890092E-02
+ CTF,   5,      -4.2951478    ,      0.44812764E-05,      -4.5122882    ,      0.37077694E-01
+ CTF,   4,       19.475655    ,      0.64799321E-04,       23.296495    ,     -0.32014231    
+ CTF,   3,      -47.701531    ,      0.20427940E-03,      -61.267223    ,       1.2951200    
+ CTF,   2,       64.076312    ,      0.15097090E-03,       85.900972    ,      -2.6478936    
+ CTF,   1,      -44.250528    ,      0.20307755E-04,      -60.967448    ,       2.6283368    
+ CTF,   0,       12.250802    ,      0.14622031E-06,       17.189025    
+ Construction CTF,PARTITION,   7,   3,   4,   0.500,      2.857    ,   0.900,   0.900,   0.500,   0.500,Rough
+ Material CTF Summary,GYPSUM PLASTERBOARD_.O25,  0.0250,         0.250,    900.000,     1000.000,  0.1000    
+ Material CTF Summary,5_RVAL_2,  0.0000,         0.000,      0.000,        0.000,  0.1500    
+ Material CTF Summary,GYPSUM PLASTERBOARD_.O25,  0.0250,         0.250,    900.000,     1000.000,  0.1000    
+ CTF,   4,      0.10128315E-08,      0.39076106E-09,      0.10128315E-08,     -0.30344216E-16
+ CTF,   3,     -0.70755172E-02,      0.55337098E-03,     -0.70755172E-02,      0.99645439E-09
+ CTF,   2,      0.79180793    ,      0.20370406    ,      0.79180793    ,     -0.41031005E-02
+ CTF,   1,      -9.9538120    ,       1.5982646    ,      -9.9538120    ,      0.17220266    
+ CTF,   0,       11.545938    ,      0.57433634    ,       11.545938    
+ Construction CTF,PARTITION_REV,   8,   3,   4,   0.500,      2.857    ,   0.900,   0.900,   0.500,   0.500,Rough
+ Material CTF Summary,GYPSUM PLASTERBOARD_.O25,  0.0250,         0.250,    900.000,     1000.000,  0.1000    
+ Material CTF Summary,6_RVAL_2,  0.0000,         0.000,      0.000,        0.000,  0.1500    
+ Material CTF Summary,GYPSUM PLASTERBOARD_.O25,  0.0250,         0.250,    900.000,     1000.000,  0.1000    
+ CTF,   4,      0.10128315E-08,      0.39076106E-09,      0.10128315E-08,     -0.30344216E-16
+ CTF,   3,     -0.70755172E-02,      0.55337098E-03,     -0.70755172E-02,      0.99645439E-09
+ CTF,   2,      0.79180793    ,      0.20370406    ,      0.79180793    ,     -0.41031005E-02
+ CTF,   1,      -9.9538120    ,       1.5982646    ,      -9.9538120    ,      0.17220266    
+ CTF,   0,       11.545938    ,      0.57433634    ,       11.545938    
+ Construction CTF,INSIDEDOOR,   9,   1,   5,   0.500,      5.429    ,   0.900,   0.900,   0.500,   0.500,Rough
+ Material CTF Summary,PAINTED OAK_.O35,  0.0350,         0.190,    700.000,     2390.000,  0.1842    
+ CTF,   5,     -0.50192675E-15,      0.48303058E-15,     -0.50190548E-15,     -0.10201428E-20
+ CTF,   4,      0.22036103E-07,      0.17143312E-07,      0.22036103E-07,     -0.50831998E-13
+ CTF,   3,     -0.13431200E-02,      0.88137393E-03,     -0.13431200E-02,      0.22670063E-06
+ CTF,   2,      0.67106919    ,      0.30595575    ,      0.67106919    ,     -0.20679812E-02
+ CTF,   1,      -10.438262    ,       2.7323533    ,      -10.438262    ,      0.23681417    
+ CTF,   0,       13.922770    ,       1.1150433    ,       13.922770    
+ Construction CTF,INSIDEDOOR_REV,  10,   1,   5,   0.500,      5.429    ,   0.900,   0.900,   0.500,   0.500,Rough
+ Material CTF Summary,PAINTED OAK_.O35,  0.0350,         0.190,    700.000,     2390.000,  0.1842    
+ CTF,   5,     -0.50190548E-15,      0.48303058E-15,     -0.50192675E-15,     -0.10201428E-20
+ CTF,   4,      0.22036103E-07,      0.17143312E-07,      0.22036103E-07,     -0.50831998E-13
+ CTF,   3,     -0.13431200E-02,      0.88137393E-03,     -0.13431200E-02,      0.22670063E-06
+ CTF,   2,      0.67106919    ,      0.30595575    ,      0.67106919    ,     -0.20679812E-02
+ CTF,   1,      -10.438262    ,       2.7323533    ,      -10.438262    ,      0.23681417    
+ CTF,   0,       13.922770    ,       1.1150433    ,       13.922770    
+ Construction CTF,EXTERNALWALLBO.287,  11,   4,  15,   0.500,     0.7622E-01,   0.900,   0.900,   0.600,   0.500,Rough
+ Material CTF Summary,CEMENT/PLASTER/MORTAR - CEMENT PLASTER SAND AGGREGATE_.O25,  0.0250,         0.720,   1860.000,      840.000,  0.3472E-01
+ Material CTF Summary,EPS EXPANDED POLYSTYRENE (HEAVYWEIGHT)_.1,  0.4431,         0.035,     25.000,     1400.000,   12.66    
+ Material CTF Summary,CONCRETE BLOCK (MEDIUM)_.2,  0.2000,         0.510,   1400.000,     1000.000,  0.3922    
+ Material CTF Summary,GYPSUM PLASTERING_.O13,  0.0130,         0.400,   1000.000,     1000.000,  0.3250E-01
+ CTF,  15,     -0.30539782E-07,     -0.83158484E-18,     -0.18166449E-07,      0.36257771E-17
+ CTF,  14,      0.63922268E-05,     -0.17126205E-15,      0.33500151E-05,     -0.90936312E-08
+ CTF,  13,     -0.35930503E-03,      0.30370496E-14,     -0.18037914E-03,      0.83171684E-06
+ CTF,  12,      0.94650402E-02,     -0.45042681E-13,      0.47498834E-02,     -0.31558695E-04
+ CTF,  11,     -0.14431607    ,      0.36091743E-11,     -0.74056181E-01,      0.66085038E-03
+ CTF,  10,       1.4135985    ,      0.20880625E-09,      0.75191624    ,     -0.86211222E-02
+ CTF,   9,      -9.4303287    ,      0.44688419E-08,      -5.2460390    ,      0.74854175E-01
+ CTF,   8,       44.338531    ,      0.40897436E-07,       25.953837    ,     -0.44971440    
+ CTF,   7,      -149.76872    ,      0.17180188E-06,      -92.641151    ,       1.9114968    
+ CTF,   6,       366.41834    ,      0.33447152E-06,       240.19909    ,      -5.8067524    
+ CTF,   5,      -648.17789    ,      0.29842336E-06,      -451.09819    ,       12.602319    
+ CTF,   4,       818.57842    ,      0.11087144E-06,       605.33648    ,      -19.311824    
+ CTF,   3,      -717.82011    ,      0.17120600E-07,      -564.10721    ,       20.337451    
+ CTF,   2,       414.39370    ,     -0.57162924E-09,       345.90103    ,      -13.962801    
+ CTF,   1,      -141.37344    ,      0.41226983E-09,      -125.21954    ,       5.6129485    
+ CTF,   0,       21.563106    ,     -0.72191445E-10,       20.239266    
+ Construction CTF,EXTERNALDOOR,  13,   1,   5,   0.500,      5.429    ,   0.900,   0.900,   0.500,   0.500,Rough
+ Material CTF Summary,PAINTED OAK_.O35,  0.0350,         0.190,    700.000,     2390.000,  0.1842    
+ CTF,   5,     -0.50190548E-15,      0.48303058E-15,     -0.50192675E-15,     -0.10201428E-20
+ CTF,   4,      0.22036103E-07,      0.17143312E-07,      0.22036103E-07,     -0.50831998E-13
+ CTF,   3,     -0.13431200E-02,      0.88137393E-03,     -0.13431200E-02,      0.22670063E-06
+ CTF,   2,      0.67106919    ,      0.30595575    ,      0.67106919    ,     -0.20679812E-02
+ CTF,   1,      -10.438262    ,       2.7323533    ,      -10.438262    ,      0.23681417    
+ CTF,   0,       13.922770    ,       1.1150433    ,       13.922770    
+! <WindowConstruction>,Construction Name,Index,#Layers,Roughness,Conductance {W/m2-K},SHGC,Solar Transmittance at Normal Incidence,Visible Transmittance at Normal Incidence
+! <WindowMaterial:Glazing>, Material Name, Optical Data Type, Spectral Data Set Name, Thickness {m}, Solar Transmittance,Front Solar Reflectance, Back Solar Reflectance, Visible Transmittance, Front Visible Reflectance,Back Visible Reflectance,Infrared Transmittance, Front Thermal Emissivity, Back Thermal Emissivity,Conductivity {W/m-K},Dirt Factor,Solar Diffusing
+! <WindowMaterial:Gas>,Material Name,GasType,Thickness {m}
+! <WindowMaterial:Blind>,Material Name,Slat Width {m},Slat Separation {m},Slat Thickness {m},Slat Angle {deg},Slat Beam Solar Transmittance,Slat Beam Solar Front Reflectance,Blind To Glass Distance {m}
+ WindowConstruction,SINGLE_GLAZING,15,3,VerySmooth,1.960,0.691,0.624,0.744
+ WindowMaterial:Glazing,GLASS 38,SpectralAverage,,3.00000E-003,0.74000,9.00000E-002,0.10000,0.82000,0.11000,0.12000,0.00000,0.84000,0.20000,0.90000,1.00000,No
+ WindowMaterial:Gas,AIR 13MM,Air,1.300E-002
+ WindowMaterial:Glazing,GLASS 2,SpectralAverage,,3.00000E-003,0.83700,7.50000E-002,7.50000E-002,0.89800,8.10000E-002,8.10000E-002,0.00000,0.84000,0.84000,0.90000,1.00000,No
+ WindowConstruction,DOUBLE_GLAZING,16,3,VerySmooth,1.908,0.568,0.472,0.744
+ WindowMaterial:Glazing,GLASS 3,SpectralAverage,,6.00000E-003,0.77500,7.10000E-002,7.10000E-002,0.88100,8.00000E-002,8.00000E-002,0.00000,0.84000,0.84000,0.90000,1.00000,No
+ WindowMaterial:Gas,AIR 13MM,Air,1.300E-002
+ WindowMaterial:Glazing,GLASS 42,SpectralAverage,,6.00000E-003,0.60000,0.17000,0.22000,0.84000,5.50000E-002,7.80000E-002,0.00000,0.84000,0.10000,0.90000,1.00000,No
+ WindowConstruction,TRIPLE_GLAZING,17,5,VerySmooth,1.019,0.474,0.358,0.661
+ WindowMaterial:Glazing,GLASS 40,SpectralAverage,,3.00000E-003,0.63000,0.19000,0.22000,0.85000,5.60000E-002,7.90000E-002,0.00000,0.84000,0.10000,0.90000,1.00000,No
+ WindowMaterial:Gas,AIR 12MM,Air,1.200E-002
+ WindowMaterial:Glazing,GLASS 2,SpectralAverage,,3.00000E-003,0.83700,7.50000E-002,7.50000E-002,0.89800,8.10000E-002,8.10000E-002,0.00000,0.84000,0.84000,0.90000,1.00000,No
+ WindowMaterial:Gas,AIR 12MM,Air,1.200E-002
+ WindowMaterial:Glazing,GLASS 41,SpectralAverage,,3.00000E-003,0.63000,0.22000,0.19000,0.85000,7.90000E-002,5.60000E-002,0.00000,0.10000,0.84000,0.90000,1.00000,No
+ WindowConstruction,TRIPLE_GLAZING:BLIND_20001:INT,18,6,VerySmooth,1.019,0.390,0.112,0.197
+ WindowMaterial:Glazing,GLASS 40,SpectralAverage,,3.00000E-003,0.63000,0.19000,0.22000,0.85000,5.60000E-002,7.90000E-002,0.00000,0.84000,0.10000,0.90000,1.00000,No
+ WindowMaterial:Gas,AIR 12MM,Air,1.200E-002
+ WindowMaterial:Glazing,GLASS 2,SpectralAverage,,3.00000E-003,0.83700,7.50000E-002,7.50000E-002,0.89800,8.10000E-002,8.10000E-002,0.00000,0.84000,0.84000,0.90000,1.00000,No
+ WindowMaterial:Gas,AIR 12MM,Air,1.200E-002
+ WindowMaterial:Glazing,GLASS 41,SpectralAverage,,3.00000E-003,0.63000,0.22000,0.19000,0.85000,7.90000E-002,5.60000E-002,0.00000,0.10000,0.84000,0.90000,1.00000,No
+ WindowMaterial:Blind,BLIND_20001,2.5000E-002,1.8750E-002,1.0000E-003,45.000,0.000,0.800,1.500E-002
+! <Shadowing/Sun Position Calculations Annual Simulations>, Shading Calculation Method, Shading Calculation Update Frequency Method, Shading Calculation Update Frequency {days}, Maximum Figures in Shadow Overlap Calculations {}, Polygon Clipping Algorithm, Pixel Counting Resolution, Sky Diffuse Modeling Algorithm, Output External Shading Calculation Results, Disable Self-Shading Within Shading Zone Groups, Disable Self-Shading From Shading Zone Groups to Other Zones
+Shadowing/Sun Position Calculations Annual Simulations,PolygonClipping,Periodic,20,15000,SutherlandHodgman,512,SimpleSkyDiffuseModeling,No,No,No
+! <Zone/Window Adjacency Daylighting Counts>, Zone Name, Number of Exterior Windows, Number of Exterior Windows in Adjacent Zones
+Zone/Window Adjacency Daylighting Counts, BLOCK1B:KITCHEN,1,0
+Zone/Window Adjacency Daylighting Counts, BLOCK1B:BATHROOM1,1,0
+Zone/Window Adjacency Daylighting Counts, BLOCK1B:ROOM1,2,0
+Zone/Window Adjacency Daylighting Counts, BLOCK1B:CORRIDOR,0,0
+Zone/Window Adjacency Daylighting Counts, BLOCK1B:BATHROOM,1,0
+Zone/Window Adjacency Daylighting Counts, BLOCK1B:LIVINGROOM,2,0
+Zone/Window Adjacency Daylighting Counts, BLOCK1B:ROOM,2,0
+! <Zone/Window Adjacency Daylighting Matrix>, Zone Name, Number of Adjacent Zones with Windows,Adjacent Zone Names - 1st 100 (max)
+Zone/Window Adjacency Daylighting Matrix, BLOCK1B:KITCHEN,0
+Zone/Window Adjacency Daylighting Matrix, BLOCK1B:BATHROOM1,0
+Zone/Window Adjacency Daylighting Matrix, BLOCK1B:ROOM1,0
+Zone/Window Adjacency Daylighting Matrix, BLOCK1B:CORRIDOR,0
+Zone/Window Adjacency Daylighting Matrix, BLOCK1B:BATHROOM,0
+Zone/Window Adjacency Daylighting Matrix, BLOCK1B:LIVINGROOM,0
+Zone/Window Adjacency Daylighting Matrix, BLOCK1B:ROOM,0
+! <Surface View Factor Check Values>,Zone/Enclosure Name,Original Check Value,Calculated Fixed Check Value,Final Check Value,Number of Iterations,Fixed RowSum Convergence,Used RowSum Convergence
+Surface View Factor Check Values,BLOCK1B:KITCHEN,1.776357E-015,6.793005E-004,6.793005E-004,9,6.793005E-004,6.793005E-004
+Surface View Factor Check Values,BLOCK1B:BATHROOM1,3.552714E-015,6.730893E-004,6.730893E-004,10,6.730893E-004,6.730893E-004
+Surface View Factor Check Values,BLOCK1B:ROOM1,3.552714E-015,7.570022E-004,7.570022E-004,5,7.570022E-004,7.570022E-004
+Surface View Factor Check Values,BLOCK1B:CORRIDOR,3.552714E-015,7.543153E-004,7.543153E-004,6,7.543153E-004,7.543153E-004
+Surface View Factor Check Values,BLOCK1B:BATHROOM,2.664535E-015,8.062985E-004,8.062985E-004,9,8.062985E-004,8.062985E-004
+Surface View Factor Check Values,BLOCK1B:LIVINGROOM,1.421085E-014,7.245278E-004,7.245278E-004,11,7.245278E-004,7.245278E-004
+Surface View Factor Check Values,BLOCK1B:ROOM,3.552714E-015,7.254402E-004,7.254402E-004,10,7.254402E-004,7.254402E-004
+! <Surface Convection Parameters>, Surface Name, Outside Model Assignment, Outside Area [m2], Outside Perimeter [m], Outside Height [m], Inside Model Assignment, Inside Height [m], Inside Perimeter Envelope [m], Inside Hydraulic Diameter [m], Window Wall Ratio, Window Location, Near Radiant {Yes/No}, Has Active HVAC {Yes/No}
+Surface Convection Parameters,BLOCK1B:KITCHEN_PARTITION_2_0_0,0,0.00,0.00,0.00,0,3.00,6.20,2.21,0.10,0,No,No
+Surface Convection Parameters,BLOCK1B:KITCHEN_PARTITION_3_0_0,0,0.00,0.00,0.00,0,3.00,6.20,2.21,0.10,0,No,No
+Surface Convection Parameters,BLOCK1B:KITCHEN_PARTITION_3_0_0_0_0_0_DOOR,0,0.00,0.00,0.00,0,3.00,6.20,2.21,0.10,0,No,No
+Surface Convection Parameters,BLOCK1B:KITCHEN_WALL_4_0_0,0,27.00,40.01,3.00,0,3.00,6.20,2.21,0.10,4,No,No
+Surface Convection Parameters,BLOCK1B:KITCHEN_WALL_5_0_0,0,26.86,40.01,3.00,0,3.00,6.20,2.21,0.10,4,No,No
+Surface Convection Parameters,BLOCK1B:KITCHEN_WALL_5_0_0_0_0_0_WIN,0,26.86,40.01,3.00,0,3.00,6.20,2.21,0.10,1,No,No
+Surface Convection Parameters,BLOCK1B:KITCHEN_GROUNDFLOOR_0_0_0,0,0.00,0.00,0.00,0,3.00,6.20,2.21,0.10,0,No,No
+Surface Convection Parameters,BLOCK1B:KITCHEN_ROOF_1_0_0,0,74.00,34.34,0.00,0,3.00,6.20,2.21,0.10,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM1_PARTITION_5_0_10000,0,0.00,0.00,0.00,0,3.00,1.50,1.71,0.23,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM1_PARTITION_2_0_0,0,0.00,0.00,0.00,0,3.00,1.50,1.71,0.23,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM1_PARTITION_3_0_0,0,0.00,0.00,0.00,0,3.00,1.50,1.71,0.23,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM1_PARTITION_3_0_0_0_0_0_DOOR,0,0.00,0.00,0.00,0,3.00,1.50,1.71,0.23,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM1_PARTITION_4_0_0,0,0.00,0.00,0.00,0,3.00,1.50,1.71,0.23,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM1_WALL_6_0_0,0,26.86,40.01,3.00,0,3.00,1.50,1.71,0.23,3,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM1_WALL_6_0_0_0_0_0_WIN,0,26.86,40.01,3.00,0,3.00,1.50,1.71,0.23,2,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM1_GROUNDFLOOR_0_0_0,0,0.00,0.00,0.00,0,3.00,1.50,1.71,0.23,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM1_ROOF_1_0_0,0,74.00,34.34,0.00,0,3.00,1.50,1.71,0.23,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_PARTITION_5_0_10003,0,0.00,0.00,0.00,0,3.00,6.70,2.45,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_WALL_2_0_0,0,26.10,31.55,3.00,0,3.00,6.70,2.45,0.24,3,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_WALL_2_0_0_0_0_0_WIN,0,26.10,31.55,3.00,0,3.00,6.70,2.45,0.24,2,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_PARTITION_3_0_0,0,0.00,0.00,0.00,0,3.00,6.70,2.45,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_PARTITION_4_0_0,0,0.00,0.00,0.00,0,3.00,6.70,2.45,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_PARTITION_4_0_0_0_0_0_DOOR,0,0.00,0.00,0.00,0,3.00,6.70,2.45,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_WALL_6_0_0,0,26.86,40.01,3.00,0,3.00,6.70,2.45,0.24,3,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_WALL_6_0_0_0_0_0_WIN,0,26.86,40.01,3.00,0,3.00,6.70,2.45,0.24,2,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_GROUNDFLOOR_0_0_0,0,0.00,0.00,0.00,0,3.00,6.70,2.45,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM1_ROOF_1_0_0,0,74.00,34.34,0.00,0,3.00,6.70,2.45,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_5_0_10004,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_5_0_0_0_0_0_DOOR_10006,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_6_0_10008,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_6_0_0_0_0_0_DOOR_10010,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_2_0_0,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_2_0_0_0_0_0_DOOR,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_3_0_0,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_3_0_0_0_0_0_DOOR,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_4_0_0,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_PARTITION_4_0_0_0_0_0_DOOR,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_GROUNDFLOOR_0_0_0,0,0.00,0.00,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:CORRIDOR_ROOF_1_0_0,0,74.00,34.34,0.00,0,3.00,0.00,1.25,-999.00,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM_PARTITION_5_0_10007,0,0.00,0.00,0.00,0,3.00,2.00,1.82,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM_PARTITION_4_0_10010,0,0.00,0.00,0.00,0,3.00,2.00,1.82,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM_PARTITION_4_0_0_0_0_0_DOOR_10012,0,0.00,0.00,0.00,0,3.00,2.00,1.82,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM_WALL_2_0_0,0,26.10,31.55,3.00,0,3.00,2.00,1.82,0.24,3,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM_WALL_2_0_0_0_0_0_WIN,0,26.10,31.55,3.00,0,3.00,2.00,1.82,0.24,2,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM_PARTITION_3_0_0,0,0.00,0.00,0.00,0,3.00,2.00,1.82,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM_GROUNDFLOOR_0_0_0,0,0.00,0.00,0.00,0,3.00,2.00,1.82,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:BATHROOM_ROOF_1_0_0,0,74.00,34.34,0.00,0,3.00,2.00,1.82,0.24,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_PARTITION_10_0_10001,0,0.00,0.00,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_PARTITION_10_0_0_0_0_0_DOOR_10003,0,0.00,0.00,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_PARTITION_11_0_10006,0,0.00,0.00,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_PARTITION_2_0_10014,0,0.00,0.00,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_PARTITION_2_0_0_0_0_0_DOOR_10016,0,0.00,0.00,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_PARTITION_3_0_0,0,0.00,0.00,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_WALL_4_0_0,0,26.74,29.97,3.00,0,3.00,11.80,3.54,0.12,4,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_WALL_4_0_0_0_0_1_WIN,0,26.74,29.97,3.00,0,3.00,11.80,3.54,0.12,2,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_WALL_4_0_0_1_0_0_WIN,0,26.74,29.97,3.00,0,3.00,11.80,3.54,0.12,1,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_WALL_5_0_0,0,27.00,40.01,3.00,0,3.00,11.80,3.54,0.12,3,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_WALL_6_0_0,0,26.86,40.01,3.00,0,3.00,11.80,3.54,0.12,3,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_WALL_7_0_0,0,27.00,40.01,3.00,0,3.00,11.80,3.54,0.12,3,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_WALL_8_0_0,0,26.86,40.01,3.00,0,3.00,11.80,3.54,0.12,3,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_WALL_9_0_0,0,27.00,40.01,3.00,0,3.00,11.80,3.54,0.12,3,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_WALL_9_0_0_0_0_0_DOOR,0,27.00,40.01,3.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_GROUNDFLOOR_0_0_0,0,0.00,0.00,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_GROUNDFLOOR_0_0_1,0,0.00,0.00,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_GROUNDFLOOR_0_0_2,0,0.00,0.00,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_ROOF_1_0_0,0,74.00,34.34,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_ROOF_1_0_1,0,74.00,34.34,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:LIVINGROOM_ROOF_1_0_2,0,74.00,34.34,0.00,0,3.00,11.80,3.54,0.12,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_PARTITION_5_0_10012,0,0.00,0.00,0.00,0,3.00,8.30,3.36,0.25,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_PARTITION_5_0_0_0_0_0_DOOR_10014,0,0.00,0.00,0.00,0,3.00,8.30,3.36,0.25,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_PARTITION_6_0_10016,0,0.00,0.00,0.00,0,3.00,8.30,3.36,0.25,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_PARTITION_4_0_10017,0,0.00,0.00,0.00,0,3.00,8.30,3.36,0.25,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_WALL_2_0_0,0,26.10,31.55,3.00,0,3.00,8.30,3.36,0.25,3,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_WALL_2_0_0_0_0_0_WIN,0,26.10,31.55,3.00,0,3.00,8.30,3.36,0.25,2,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_WALL_3_0_0,0,26.74,29.97,3.00,0,3.00,8.30,3.36,0.25,3,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_WALL_3_0_0_0_0_0_WIN,0,26.74,29.97,3.00,0,3.00,8.30,3.36,0.25,2,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_GROUNDFLOOR_0_0_0,0,0.00,0.00,0.00,0,3.00,8.30,3.36,0.25,0,No,No
+Surface Convection Parameters,BLOCK1B:ROOM_ROOF_1_0_0,0,74.00,34.34,0.00,0,3.00,8.30,3.36,0.25,0,No,No
+! <Building Convection Parameters:North Facade>, Perimeter, Height, Xmin, Xmax, Ymin, Ymax, Zmin, Zmax 
+Building Convection Parameters:North Facade, 40.01,3.00,0.00,11.43,0.00,12.59,0.00,3.00
+! <Building Convection Parameters:Northeast Facade>, Perimeter, Height, Xmin, Xmax, Ymin, Ymax, Zmin, Zmax 
+Building Convection Parameters:Northeast Facade, 0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+! <Building Convection Parameters:East Facade>, Perimeter, Height, Xmin, Xmax, Ymin, Ymax, Zmin, Zmax 
+Building Convection Parameters:East Facade, 40.01,3.00,0.00,11.43,0.00,12.59,0.00,3.00
+! <Building Convection Parameters:Southeast Facade>, Perimeter, Height, Xmin, Xmax, Ymin, Ymax, Zmin, Zmax 
+Building Convection Parameters:Southeast Facade, 0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+! <Building Convection Parameters:South Facade>, Perimeter, Height, Xmin, Xmax, Ymin, Ymax, Zmin, Zmax 
+Building Convection Parameters:South Facade, 29.97,3.00,0.00,11.43,0.00,3.59,0.00,3.00
+! <Building Convection Parameters:Southwest Facade>, Perimeter, Height, Xmin, Xmax, Ymin, Ymax, Zmin, Zmax 
+Building Convection Parameters:Southwest Facade, 0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+! <Building Convection Parameters:West Facade>, Perimeter, Height, Xmin, Xmax, Ymin, Ymax, Zmin, Zmax 
+Building Convection Parameters:West Facade, 31.55,3.00,0.00,2.18,0.00,12.59,0.00,3.00
+! <Building Convection Parameters:Northwest Facade>, Perimeter, Height, Xmin, Xmax, Ymin, Ymax, Zmin, Zmax 
+Building Convection Parameters:NorthwWest Facade, 0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+! <Building Convection Parameters:Roof>, Area [m2], Perimeter [m], Height [m], XdYdZd:X, XdYdZd:Y, XdYdZd:Z,XdYdZu:X, XdYdZu:Y, XdYdZu:Z,XdYuZd:X, XdYuZd:Y, XdYuZd:Z,XdYuZu:X, XdYuZu:Y, XdYuZu:Z,XuYdZd:X, XuYdZd:Y, XuYdZd:Z,XuYuZd:X, XuYuZd:Y, XuYuZd:Z,XuYdZu:X, XuYdZu:Y, XuYdZu:Z,XuYuZu:X, XuYuZu:Y, XuYuZu:Z
+Building Convection Parameters:Roof,74.00,34.34,0.00,2.184,3.586,3.000,2.184,3.586,3.000,2.184,12.586,3.000,2.184,12.586,3.000,11.434,3.586,3.000,10.184,12.586,3.000,11.434,3.586,3.000,10.184,12.586,3.000
+! <ZoneInfiltration Airflow Stats Nominal>,Name,Schedule Name,Zone Name, Zone Floor Area {m2}, # Zone Occupants,Design Volume Flow Rate {m3/s},Volume Flow Rate/Floor Area {m3/s-m2},Volume Flow Rate/Exterior Surface Area {m3/s-m2},ACH - Air Changes per Hour,Equation A - Constant Term Coefficient {},Equation B - Temperature Term Coefficient {1/C},Equation C - Velocity Term Coefficient {s/m}, Equation D - Velocity Squared Term Coefficient {s2/m2}
+ ZoneInfiltration Airflow Stats Nominal, BLOCK1B:KITCHEN INFILTRATION,ON 24/7,BLOCK1B:KITCHEN,6.85,0.2,2.853E-003,4.166E-004,1.025E-004,0.500,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, BLOCK1B:BATHROOM1 INFILTRATION,ON 24/7,BLOCK1B:BATHROOM1,4.44,0.1,1.851E-003,4.166E-004,1.838E-004,0.500,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, BLOCK1B:ROOM1 INFILTRATION,ON 24/7,BLOCK1B:ROOM1,8.19,0.2,3.414E-003,4.166E-004,1.106E-004,0.500,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, BLOCK1B:CORRIDOR INFILTRATION,ON 24/7,BLOCK1B:CORRIDOR,2.03,3.9E-002,8.480E-004,4.168E-004,3.394E-004,0.500,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, BLOCK1B:BATHROOM INFILTRATION,ON 24/7,BLOCK1B:BATHROOM,4.33,0.1,1.804E-003,4.166E-004,1.568E-004,0.500,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, BLOCK1B:LIVINGROOM INFILTRATION,ON 24/7,BLOCK1B:LIVINGROOM,18.68,0.9,7.781E-003,4.167E-004,1.287E-004,0.500,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats Nominal, BLOCK1B:ROOM INFILTRATION,ON 24/7,BLOCK1B:ROOM,13.96,0.4,5.817E-003,4.167E-004,1.381E-004,0.500,1.000,0.000,0.000,0.000
+! <ZoneVentilation Airflow Stats Nominal>,Name,Schedule Name,Zone Name, Zone Floor Area {m2}, # Zone Occupants,Design Volume Flow Rate {m3/s},Volume Flow Rate/Floor Area {m3/s-m2},Volume Flow Rate/person Area {m3/s-person},ACH - Air Changes per Hour,Fan Type {Exhaust;Intake;Natural},Fan Pressure Rise {Pa},Fan Efficiency {},Equation A - Constant Term Coefficient {},Equation B - Temperature Term Coefficient {1/C},Equation C - Velocity Term Coefficient {s/m}, Equation D - Velocity Squared Term Coefficient {s2/m2},Minimum Indoor Temperature{C}/Schedule,Maximum Indoor Temperature{C}/Schedule,Delta Temperature{C}/Schedule,Minimum Outdoor Temperature{C}/Schedule,Maximum Outdoor Temperature{C}/Schedule,Maximum WindSpeed{m/s}
+ ZoneVentilation Airflow Stats Nominal, BLOCK1B:KITCHEN NAT VENT,SUMMER (NORTHERN HEMISPHERE),BLOCK1B:KITCHEN,6.85,0.2,2.985E-002,4.359E-003,0.136,5.231,Natural,0.000,1.0,1.000,0.000,0.000,0.000,24.00,100.00,2.00,-100.00,26.00,40.00
+ ZoneVentilation Airflow Stats Nominal, BLOCK1B:BATHROOM1 NAT VENT,SUMMER (NORTHERN HEMISPHERE),BLOCK1B:BATHROOM1,4.44,0.1,1.937E-002,4.359E-003,0.143,5.231,Natural,0.000,1.0,1.000,0.000,0.000,0.000,24.00,100.00,2.00,-100.00,26.00,40.00
+ ZoneVentilation Airflow Stats Nominal, BLOCK1B:ROOM1 NAT VENT,SUMMER (NORTHERN HEMISPHERE),BLOCK1B:ROOM1,8.19,0.2,3.572E-002,4.359E-003,0.144,5.231,Natural,0.000,1.0,1.000,0.000,0.000,0.000,24.00,100.00,2.00,-100.00,26.00,40.00
+ ZoneVentilation Airflow Stats Nominal, BLOCK1B:CORRIDOR NAT VENT,SUMMER (NORTHERN HEMISPHERE),BLOCK1B:CORRIDOR,2.03,3.9E-002,8.868E-003,4.359E-003,0.229,5.231,Natural,0.000,1.0,1.000,0.000,0.000,0.000,24.00,100.00,2.00,-100.00,26.00,40.00
+ ZoneVentilation Airflow Stats Nominal, BLOCK1B:BATHROOM NAT VENT,SUMMER (NORTHERN HEMISPHERE),BLOCK1B:BATHROOM,4.33,0.1,1.887E-002,4.359E-003,0.141,5.231,Natural,0.000,1.0,1.000,0.000,0.000,0.000,24.00,100.00,2.00,-100.00,26.00,40.00
+ ZoneVentilation Airflow Stats Nominal, BLOCK1B:LIVINGROOM NAT VENT,SUMMER (NORTHERN HEMISPHERE),BLOCK1B:LIVINGROOM,18.68,0.9,8.140E-002,4.359E-003,8.776E-002,5.231,Natural,0.000,1.0,1.000,0.000,0.000,0.000,24.00,100.00,2.00,-100.00,26.00,40.00
+ ZoneVentilation Airflow Stats Nominal, BLOCK1B:ROOM NAT VENT,SUMMER (NORTHERN HEMISPHERE),BLOCK1B:ROOM,13.96,0.4,6.085E-002,4.359E-003,0.154,5.231,Natural,0.000,1.0,1.000,0.000,0.000,0.000,24.00,100.00,2.00,-100.00,26.00,40.00
+! <AirFlow Model>, Simple
+ AirFlow Model, Simple
+! <RoomAir Model>, Zone Name, Mixing/Mundt/UCSDDV/UCSDCV/UCSDUFI/UCSDUFE/User Defined
+RoomAir Model,BLOCK1B:KITCHEN,Mixing/Well-Stirred
+RoomAir Model,BLOCK1B:BATHROOM1,Mixing/Well-Stirred
+RoomAir Model,BLOCK1B:ROOM1,Mixing/Well-Stirred
+RoomAir Model,BLOCK1B:CORRIDOR,Mixing/Well-Stirred
+RoomAir Model,BLOCK1B:BATHROOM,Mixing/Well-Stirred
+RoomAir Model,BLOCK1B:LIVINGROOM,Mixing/Well-Stirred
+RoomAir Model,BLOCK1B:ROOM,Mixing/Well-Stirred
+! <AirflowNetwork Model:Control>, No Multizone or Distribution/Multizone with Distribution/Multizone without Distribution/Multizone with Distribution only during Fan Operation
+AirflowNetwork Model:Control,NoMultizoneOrDistribution
+! <Zone Volume Capacitance Multiplier>, Sensible Heat Capacity Multiplier, Moisture Capacity Multiplier, Carbon Dioxide Capacity Multiplier, Generic Contaminant Capacity Multiplier
+Zone Volume Capacitance Multiplier,   1.000 ,   1.000,   1.000,   1.000
+! <Load Timesteps in Zone Design Calculation Averaging Window>, Value
+ Load Timesteps in Zone Design Calculation Averaging Window,    6
+! <Heating Sizing Factor Information>, Sizing Factor ID, Value
+ Heating Sizing Factor Information, Global,   1.2500    
+ Heating Sizing Factor Information, Zone BLOCK1B:KITCHEN,   1.2500    
+ Heating Sizing Factor Information, Zone BLOCK1B:BATHROOM1,   1.2500    
+ Heating Sizing Factor Information, Zone BLOCK1B:ROOM1,   1.2500    
+ Heating Sizing Factor Information, Zone BLOCK1B:CORRIDOR,   1.2500    
+ Heating Sizing Factor Information, Zone BLOCK1B:BATHROOM,   1.2500    
+ Heating Sizing Factor Information, Zone BLOCK1B:LIVINGROOM,   1.2500    
+ Heating Sizing Factor Information, Zone BLOCK1B:ROOM,   1.2500    
+! <Cooling Sizing Factor Information>, Sizing Factor ID, Value
+ Cooling Sizing Factor Information, Global,   1.1500    
+ Cooling Sizing Factor Information, Zone BLOCK1B:KITCHEN,   1.1500    
+ Cooling Sizing Factor Information, Zone BLOCK1B:BATHROOM1,   1.1500    
+ Cooling Sizing Factor Information, Zone BLOCK1B:ROOM1,   1.1500    
+ Cooling Sizing Factor Information, Zone BLOCK1B:CORRIDOR,   1.1500    
+ Cooling Sizing Factor Information, Zone BLOCK1B:BATHROOM,   1.1500    
+ Cooling Sizing Factor Information, Zone BLOCK1B:LIVINGROOM,   1.1500    
+ Cooling Sizing Factor Information, Zone BLOCK1B:ROOM,   1.1500    
+! <Sky Daylight Factors>, MonthAndDay, Zone Name, Window Name, Reference Point, Daylight Factor
+ Sky Daylight Factors,Clear Sky,07/15,BLOCK1B:KITCHEN,BLOCK1B:KITCHEN_WALL_5_0_0_0_0_0_WIN,BLOCK1B:KITCHEN REF POINT 1,1.2386E-002
+ Sky Daylight Factors,Clear Turbid Sky,07/15,BLOCK1B:KITCHEN,BLOCK1B:KITCHEN_WALL_5_0_0_0_0_0_WIN,BLOCK1B:KITCHEN REF POINT 1,1.0256E-002
+ Sky Daylight Factors,Intermediate Sky,07/15,BLOCK1B:KITCHEN,BLOCK1B:KITCHEN_WALL_5_0_0_0_0_0_WIN,BLOCK1B:KITCHEN REF POINT 1,6.1621E-003
+ Sky Daylight Factors,Overcast Sky,07/15,BLOCK1B:KITCHEN,BLOCK1B:KITCHEN_WALL_5_0_0_0_0_0_WIN,BLOCK1B:KITCHEN REF POINT 1,1.2782E-002
+ Sky Daylight Factors,Clear Sky,07/15,BLOCK1B:BATHROOM1,BLOCK1B:BATHROOM1_WALL_6_0_0_0_0_0_WIN,BLOCK1B:BATHROOM1 REF POINT 1,9.8506E-003
+ Sky Daylight Factors,Clear Turbid Sky,07/15,BLOCK1B:BATHROOM1,BLOCK1B:BATHROOM1_WALL_6_0_0_0_0_0_WIN,BLOCK1B:BATHROOM1 REF POINT 1,8.1377E-003
+ Sky Daylight Factors,Intermediate Sky,07/15,BLOCK1B:BATHROOM1,BLOCK1B:BATHROOM1_WALL_6_0_0_0_0_0_WIN,BLOCK1B:BATHROOM1 REF POINT 1,4.8193E-003
+ Sky Daylight Factors,Overcast Sky,07/15,BLOCK1B:BATHROOM1,BLOCK1B:BATHROOM1_WALL_6_0_0_0_0_0_WIN,BLOCK1B:BATHROOM1 REF POINT 1,1.0101E-002
+ Sky Daylight Factors,Clear Sky,07/15,BLOCK1B:ROOM1,BLOCK1B:ROOM1_WALL_2_0_0_0_0_0_WIN,BLOCK1B:ROOM1 REF POINT 1,3.0543E-002
+ Sky Daylight Factors,Clear Turbid Sky,07/15,BLOCK1B:ROOM1,BLOCK1B:ROOM1_WALL_2_0_0_0_0_0_WIN,BLOCK1B:ROOM1 REF POINT 1,2.6126E-002
+ Sky Daylight Factors,Intermediate Sky,07/15,BLOCK1B:ROOM1,BLOCK1B:ROOM1_WALL_2_0_0_0_0_0_WIN,BLOCK1B:ROOM1 REF POINT 1,1.8351E-002
+ Sky Daylight Factors,Overcast Sky,07/15,BLOCK1B:ROOM1,BLOCK1B:ROOM1_WALL_2_0_0_0_0_0_WIN,BLOCK1B:ROOM1 REF POINT 1,3.4425E-002
+ Sky Daylight Factors,Clear Sky,07/15,BLOCK1B:ROOM1,BLOCK1B:ROOM1_WALL_6_0_0_0_0_0_WIN,BLOCK1B:ROOM1 REF POINT 1,3.0115E-002
+ Sky Daylight Factors,Clear Turbid Sky,07/15,BLOCK1B:ROOM1,BLOCK1B:ROOM1_WALL_6_0_0_0_0_0_WIN,BLOCK1B:ROOM1 REF POINT 1,2.4914E-002
+ Sky Daylight Factors,Intermediate Sky,07/15,BLOCK1B:ROOM1,BLOCK1B:ROOM1_WALL_6_0_0_0_0_0_WIN,BLOCK1B:ROOM1 REF POINT 1,1.5360E-002
+ Sky Daylight Factors,Overcast Sky,07/15,BLOCK1B:ROOM1,BLOCK1B:ROOM1_WALL_6_0_0_0_0_0_WIN,BLOCK1B:ROOM1 REF POINT 1,3.3935E-002
+ Sky Daylight Factors,Clear Sky,07/15,BLOCK1B:BATHROOM,BLOCK1B:BATHROOM_WALL_2_0_0_0_0_0_WIN,BLOCK1B:BATHROOM REF POINT 1,4.4656E-002
+ Sky Daylight Factors,Clear Turbid Sky,07/15,BLOCK1B:BATHROOM,BLOCK1B:BATHROOM_WALL_2_0_0_0_0_0_WIN,BLOCK1B:BATHROOM REF POINT 1,3.8840E-002
+ Sky Daylight Factors,Intermediate Sky,07/15,BLOCK1B:BATHROOM,BLOCK1B:BATHROOM_WALL_2_0_0_0_0_0_WIN,BLOCK1B:BATHROOM REF POINT 1,3.0912E-002
+ Sky Daylight Factors,Overcast Sky,07/15,BLOCK1B:BATHROOM,BLOCK1B:BATHROOM_WALL_2_0_0_0_0_0_WIN,BLOCK1B:BATHROOM REF POINT 1,5.6805E-002
+ Sky Daylight Factors,Clear Sky,07/15,BLOCK1B:LIVINGROOM,BLOCK1B:LIVINGROOM_WALL_4_0_0_0_0_1_WIN,BLOCK1B:LIVINGROOM REF POINT 1,2.9623E-002
+ Sky Daylight Factors,Clear Turbid Sky,07/15,BLOCK1B:LIVINGROOM,BLOCK1B:LIVINGROOM_WALL_4_0_0_0_0_1_WIN,BLOCK1B:LIVINGROOM REF POINT 1,2.7478E-002
+ Sky Daylight Factors,Intermediate Sky,07/15,BLOCK1B:LIVINGROOM,BLOCK1B:LIVINGROOM_WALL_4_0_0_0_0_1_WIN,BLOCK1B:LIVINGROOM REF POINT 1,1.8795E-002
+ Sky Daylight Factors,Overcast Sky,07/15,BLOCK1B:LIVINGROOM,BLOCK1B:LIVINGROOM_WALL_4_0_0_0_0_1_WIN,BLOCK1B:LIVINGROOM REF POINT 1,2.1500E-002
+ Sky Daylight Factors,Clear Sky,07/15,BLOCK1B:LIVINGROOM,BLOCK1B:LIVINGROOM_WALL_4_0_0_1_0_0_WIN,BLOCK1B:LIVINGROOM REF POINT 1,1.7163E-002
+ Sky Daylight Factors,Clear Turbid Sky,07/15,BLOCK1B:LIVINGROOM,BLOCK1B:LIVINGROOM_WALL_4_0_0_1_0_0_WIN,BLOCK1B:LIVINGROOM REF POINT 1,1.5855E-002
+ Sky Daylight Factors,Intermediate Sky,07/15,BLOCK1B:LIVINGROOM,BLOCK1B:LIVINGROOM_WALL_4_0_0_1_0_0_WIN,BLOCK1B:LIVINGROOM REF POINT 1,1.0968E-002
+ Sky Daylight Factors,Overcast Sky,07/15,BLOCK1B:LIVINGROOM,BLOCK1B:LIVINGROOM_WALL_4_0_0_1_0_0_WIN,BLOCK1B:LIVINGROOM REF POINT 1,1.2733E-002
+ Sky Daylight Factors,Clear Sky,07/15,BLOCK1B:ROOM,BLOCK1B:ROOM_WALL_2_0_0_0_0_0_WIN,BLOCK1B:ROOM REF POINT 1,4.2793E-002
+ Sky Daylight Factors,Clear Turbid Sky,07/15,BLOCK1B:ROOM,BLOCK1B:ROOM_WALL_2_0_0_0_0_0_WIN,BLOCK1B:ROOM REF POINT 1,3.6496E-002
+ Sky Daylight Factors,Intermediate Sky,07/15,BLOCK1B:ROOM,BLOCK1B:ROOM_WALL_2_0_0_0_0_0_WIN,BLOCK1B:ROOM REF POINT 1,2.5198E-002
+ Sky Daylight Factors,Overcast Sky,07/15,BLOCK1B:ROOM,BLOCK1B:ROOM_WALL_2_0_0_0_0_0_WIN,BLOCK1B:ROOM REF POINT 1,4.7733E-002
+ Sky Daylight Factors,Clear Sky,07/15,BLOCK1B:ROOM,BLOCK1B:ROOM_WALL_3_0_0_0_0_0_WIN,BLOCK1B:ROOM REF POINT 1,5.2722E-002
+ Sky Daylight Factors,Clear Turbid Sky,07/15,BLOCK1B:ROOM,BLOCK1B:ROOM_WALL_3_0_0_0_0_0_WIN,BLOCK1B:ROOM REF POINT 1,4.9599E-002
+ Sky Daylight Factors,Intermediate Sky,07/15,BLOCK1B:ROOM,BLOCK1B:ROOM_WALL_3_0_0_0_0_0_WIN,BLOCK1B:ROOM REF POINT 1,3.5181E-002
+ Sky Daylight Factors,Overcast Sky,07/15,BLOCK1B:ROOM,BLOCK1B:ROOM_WALL_3_0_0_0_0_0_WIN,BLOCK1B:ROOM REF POINT 1,3.8163E-002
+! <Zone Sizing Information>, Zone Name, Load Type, Calc Des Load {W}, User Des Load {W}, Calc Des Air Flow Rate {m3/s}, User Des Air Flow Rate {m3/s}, Design Day Name, Date/Time of Peak, Temperature at Peak {C}, Humidity Ratio at Peak {kgWater/kgDryAir}, Floor Area {m2}, # Occupants, Calc Outdoor Air Flow Rate {m3/s}, Calc DOAS Heat Addition Rate {W}
+ Zone Sizing Information, BLOCK1B:KITCHEN, Cooling, 155.41229, 178.72413, 9.06168E-003, 1.04209E-002, SUMMER DESIGN DAY LUG, 7/15 09:00:00, 25.40000, 1.40022E-002, 6.84770, 0.21893, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:KITCHEN, Heating, 194.21266, 242.76583, 1.03944E-002, 1.29930E-002, WINTER DESIGN DAY, 1/15 24:00:00, -5.90000, 2.37130E-003, 6.84770, 0.21893, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:BATHROOM1, Cooling, 65.39073, 75.19934, 3.80759E-003, 4.37873E-003, SUMMER DESIGN DAY LUG, 7/15 20:30:00, 25.45000, 1.40023E-002, 4.44310, 0.13513, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:BATHROOM1, Heating, 120.11349, 150.14186, 6.42893E-003, 8.03616E-003, WINTER DESIGN DAY, 1/15 24:00:00, -5.90000, 2.37130E-003, 4.44310, 0.13513, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:ROOM1, Cooling, 414.13823, 476.25896, 2.41154E-002, 2.77327E-002, SUMMER DESIGN DAY LUG, 7/15 18:00:00, 28.50000, 1.40078E-002, 8.19470, 0.24751, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:ROOM1, Heating, 275.66626, 344.58282, 1.47535E-002, 1.84419E-002, WINTER DESIGN DAY, 1/15 24:00:00, -5.90000, 2.37130E-003, 8.19470, 0.24751, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:CORRIDOR, Cooling, 39.32650, 45.22547, 2.28979E-003, 2.63326E-003, SUMMER DESIGN DAY LUG, 7/15 21:00:00, 25.00000, 1.40015E-002, 2.03440, 3.87349E-002, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:CORRIDOR, Heating, 49.58015, 61.97519, 2.65395E-003, 3.31744E-003, WINTER DESIGN DAY, 1/15 24:00:00, -5.90000, 2.37130E-003, 2.03440, 3.87349E-002, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:BATHROOM, Cooling, 270.81061, 311.43220, 1.57691E-002, 1.81345E-002, SUMMER DESIGN DAY LUG, 7/15 18:00:00, 28.50000, 1.40078E-002, 4.33020, 0.13392, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:BATHROOM, Heating, 126.44671, 158.05838, 6.76782E-003, 8.45978E-003, WINTER DESIGN DAY, 1/15 24:00:00, -5.90000, 2.37130E-003, 4.33020, 0.13392, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:LIVINGROOM, Cooling, 221.21669, 254.39919, 1.28826E-002, 1.48150E-002, SUMMER DESIGN DAY LUG, 7/15 21:00:00, 25.00000, 1.40015E-002, 18.67510, 0.92760, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:LIVINGROOM, Heating, 576.65769, 720.82212, 3.08591E-002, 3.85738E-002, WINTER DESIGN DAY, 1/15 24:00:00, -5.90000, 2.37130E-003, 18.67510, 0.92760, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:ROOM, Cooling, 645.11688, 741.88442, 3.75669E-002, 4.32019E-002, SUMMER DESIGN DAY LUG, 7/15 18:00:00, 28.50000, 1.40078E-002, 13.96110, 0.39501, 0.00000, 0.00000
+ Zone Sizing Information, BLOCK1B:ROOM, Heating, 414.79488, 518.49360, 2.21974E-002, 2.77468E-002, WINTER DESIGN DAY, 1/15 24:00:00, -5.90000, 2.37130E-003, 13.96110, 0.39501, 0.00000, 0.00000
+! <Component Sizing Information>, Component Type, Component Name, Input Field Description, Value
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:KITCHEN IDEAL LOADS AIR, Design Size Maximum Heating Air Flow Rate [m3/s], 1.29930E-002
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:KITCHEN IDEAL LOADS AIR, Design Size Maximum Sensible Heating Capacity [W], 242.76580
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:KITCHEN IDEAL LOADS AIR, Design Size Maximum Cooling Air Flow Rate [m3/s], 1.04209E-002
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:KITCHEN IDEAL LOADS AIR, Design Size Maximum Total Cooling Capacity [W], 265.86089
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:BATHROOM1 IDEAL LOADS AIR, Design Size Maximum Heating Air Flow Rate [m3/s], 8.03616E-003
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:BATHROOM1 IDEAL LOADS AIR, Design Size Maximum Sensible Heating Capacity [W], 150.14185
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:BATHROOM1 IDEAL LOADS AIR, Design Size Maximum Cooling Air Flow Rate [m3/s], 4.37873E-003
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:BATHROOM1 IDEAL LOADS AIR, Design Size Maximum Total Cooling Capacity [W], 107.98677
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:ROOM1 IDEAL LOADS AIR, Design Size Maximum Heating Air Flow Rate [m3/s], 1.84419E-002
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:ROOM1 IDEAL LOADS AIR, Design Size Maximum Sensible Heating Capacity [W], 344.58280
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:ROOM1 IDEAL LOADS AIR, Design Size Maximum Cooling Air Flow Rate [m3/s], 2.77327E-002
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:ROOM1 IDEAL LOADS AIR, Design Size Maximum Total Cooling Capacity [W], 534.62602
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:CORRIDOR IDEAL LOADS AIR, Design Size Maximum Heating Air Flow Rate [m3/s], 3.31744E-003
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:CORRIDOR IDEAL LOADS AIR, Design Size Maximum Sensible Heating Capacity [W], 61.97518
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:CORRIDOR IDEAL LOADS AIR, Design Size Maximum Cooling Air Flow Rate [m3/s], 2.63326E-003
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:CORRIDOR IDEAL LOADS AIR, Design Size Maximum Total Cooling Capacity [W], 58.81934
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:BATHROOM IDEAL LOADS AIR, Design Size Maximum Heating Air Flow Rate [m3/s], 8.45978E-003
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:BATHROOM IDEAL LOADS AIR, Design Size Maximum Sensible Heating Capacity [W], 158.05838
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:BATHROOM IDEAL LOADS AIR, Design Size Maximum Cooling Air Flow Rate [m3/s], 1.81345E-002
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:BATHROOM IDEAL LOADS AIR, Design Size Maximum Total Cooling Capacity [W], 345.49391
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:LIVINGROOM IDEAL LOADS AIR, Design Size Maximum Heating Air Flow Rate [m3/s], 3.85738E-002
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:LIVINGROOM IDEAL LOADS AIR, Design Size Maximum Sensible Heating Capacity [W], 720.82206
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:LIVINGROOM IDEAL LOADS AIR, Design Size Maximum Cooling Air Flow Rate [m3/s], 1.48150E-002
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:LIVINGROOM IDEAL LOADS AIR, Design Size Maximum Total Cooling Capacity [W], 374.88122
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:ROOM IDEAL LOADS AIR, Design Size Maximum Heating Air Flow Rate [m3/s], 2.77468E-002
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:ROOM IDEAL LOADS AIR, Design Size Maximum Sensible Heating Capacity [W], 518.49357
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:ROOM IDEAL LOADS AIR, Design Size Maximum Cooling Air Flow Rate [m3/s], 4.32019E-002
+ Component Sizing Information, ZoneHVAC:IdealLoadsAirSystem, BLOCK1B:ROOM IDEAL LOADS AIR, Design Size Maximum Total Cooling Capacity [W], 841.72703
+! <Zone Surfaces>,Zone Name,# Surfaces
+! <Shading Surfaces>,Number of Shading Surfaces,# Surfaces
+! <HeatTransfer Surface>,Surface Name,Surface Class,Base Surface,Heat Transfer Algorithm,Construction,Nominal U (w/o film coefs) {W/m2-K},Nominal U (with film coefs) {W/m2-K},Solar Diffusing,Area (Net) {m2},Area (Gross) {m2},Area (Sunlit Calc) {m2},Azimuth {deg},Tilt {deg},~Width {m},~Height {m},Reveal {m},ExtBoundCondition,ExtConvCoeffCalc,IntConvCoeffCalc,SunExposure,WindExposure,ViewFactorToGround,ViewFactorToSky,ViewFactorToGround-IR,ViewFactorToSky-IR,#Sides
+! <Shading Surface>,Surface Name,Surface Class,Base Surface,Heat Transfer Algorithm,Transmittance Schedule,Min Schedule Value,Max Schedule Value,Solar Diffusing,Area (Net) {m2},Area (Gross) {m2},Area (Sunlit Calc) {m2},Azimuth {deg},Tilt {deg},~Width {m},~Height {m},Reveal {m},ExtBoundCondition,ExtConvCoeffCalc,IntConvCoeffCalc,SunExposure,WindExposure,ViewFactorToGround,ViewFactorToSky,ViewFactorToGround-IR,ViewFactorToSky-IR,#Sides
+! <Frame/Divider Surface>,Surface Name,Surface Class,Base Surface,Heat Transfer Algorithm,Construction,Nominal U (w/o film coefs) {W/m2-K},Nominal U (with film coefs) {W/m2-K},Solar Diffusing,Area (Net) {m2},Area (Gross) {m2},Area (Sunlit Calc) {m2},Azimuth {deg},Tilt {deg},~Width {m},~Height {m},Reveal {m}
+Shading Surfaces,Number of Shading Surfaces,72
+Shading Surface,BUILDING_1_BLOCK_COMPONENT9 - SURFACE 1 (1),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT9 - SURFACE 1 (1),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT9 - SURFACE 2 (2),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT9 - SURFACE 2 (2),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT9 - SURFACE 3 (3),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT9 - SURFACE 3 (3),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT9 - SURFACE 4 (4),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT9 - SURFACE 4 (4),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT9 - SURFACE 5 (5),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT9 - SURFACE 5 (5),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT9 - SURFACE 6 (6),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT9 - SURFACE 6 (6),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT9,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT10 - SURFACE 1 (7),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT10 - SURFACE 1 (7),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT10 - SURFACE 2 (8),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT10 - SURFACE 2 (8),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT10 - SURFACE 3 (9),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT10 - SURFACE 3 (9),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT10 - SURFACE 4 (10),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT10 - SURFACE 4 (10),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT10 - SURFACE 5 (11),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT10 - SURFACE 5 (11),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT10 - SURFACE 6 (12),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT10 - SURFACE 6 (12),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT10,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT11 - SURFACE 1 (13),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT11 - SURFACE 1 (13),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT11 - SURFACE 2 (14),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT11 - SURFACE 2 (14),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT11 - SURFACE 3 (15),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT11 - SURFACE 3 (15),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT11 - SURFACE 4 (16),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT11 - SURFACE 4 (16),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT11 - SURFACE 5 (17),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT11 - SURFACE 5 (17),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT11 - SURFACE 6 (18),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT11 - SURFACE 6 (18),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT11,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT12 - SURFACE 1 (19),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT12 - SURFACE 1 (19),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT12 - SURFACE 2 (20),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT12 - SURFACE 2 (20),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT12 - SURFACE 3 (21),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT12 - SURFACE 3 (21),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT12 - SURFACE 4 (22),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT12 - SURFACE 4 (22),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT12 - SURFACE 5 (23),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT12 - SURFACE 5 (23),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT12 - SURFACE 6 (24),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT12 - SURFACE 6 (24),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT12,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT15 - SURFACE 1 (25),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT15 - SURFACE 1 (25),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT15 - SURFACE 2 (26),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT15 - SURFACE 2 (26),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT15 - SURFACE 3 (27),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT15 - SURFACE 3 (27),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT15 - SURFACE 4 (28),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT15 - SURFACE 4 (28),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT15 - SURFACE 5 (29),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT15 - SURFACE 5 (29),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT15 - SURFACE 6 (30),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT15 - SURFACE 6 (30),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT15,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT16 - SURFACE 1 (31),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT16 - SURFACE 1 (31),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT16 - SURFACE 2 (32),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,5.00,5.00,5.00,180.00,0.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT16 - SURFACE 2 (32),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,5.00,5.00,5.00,0.00,180.00,5.00,1.00,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT16 - SURFACE 3 (33),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT16 - SURFACE 3 (33),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT16 - SURFACE 4 (34),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT16 - SURFACE 4 (34),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT16 - SURFACE 5 (35),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,0.15,0.15,0.15,270.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT16 - SURFACE 5 (35),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,0.15,0.15,0.15,90.00,90.00,1.00,0.15,,,,,,,,,,,4
+Shading Surface,BUILDING_1_BLOCK_COMPONENT16 - SURFACE 6 (36),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,0.75,0.75,0.75,0.00,90.00,5.00,0.15,,,,,,,,,,,4
+Shading Surface,Mir-BUILDING_1_BLOCK_COMPONENT16 - SURFACE 6 (36),Detached Shading:Building,,None,TRANSMITTANCE SCHEDULE FOR BUILDING_1_BLOCK_COMPONENT16,0.00,0.00, ,0.75,0.75,0.75,180.00,90.00,5.00,0.15,,,,,,,,,,,4
+Zone Surfaces,BLOCK1B:KITCHEN,8
+HeatTransfer Surface,BLOCK1B:KITCHEN_PARTITION_2_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,11.10,11.10,11.10,270.00,90.00,3.70,3.00,0.00,BLOCK1B:BATHROOM1_PARTITION_5_0_10000,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:KITCHEN_PARTITION_3_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,5.84,7.49,5.84,180.00,90.00,2.50,3.00,0.00,BLOCK1B:LIVINGROOM_PARTITION_10_0_10001,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:KITCHEN_PARTITION_3_0_0_0_0_0_DOOR,Door,BLOCK1B:KITCHEN_PARTITION_3_0_0,CTF - ConductionTransferFunction,INSIDEDOOR,5.429,5.429,,1.65,1.65,1.65,180.00,90.00,0.75,2.20,0.00,BLOCK1B:LIVINGROOM_PARTITION_10_0_0_0_0_0_DOOR_10003,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:KITCHEN_WALL_4_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,11.10,11.10,11.10,90.00,90.00,3.70,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:KITCHEN_WALL_5_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,5.30,7.49,5.55,0.00,90.00,2.50,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.67,0.33,4
+HeatTransfer Surface,BLOCK1B:KITCHEN_WALL_5_0_0_0_0_0_WIN,Window,BLOCK1B:KITCHEN_WALL_5_0_0,Window5 Detailed Fenestration,TRIPLE_GLAZING,N/A,1.019,No,1.88,1.94,1.94,0.00,90.00,0.92,2.12,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.57,0.43,4
+Frame/Divider Surface,1,Frame,BLOCK1B:KITCHEN_WALL_5_0_0_0_0_0_WIN,Window5 Detailed Fenestration,,N/A,N/A,,0.25,0.25,*,N/A,N/A,4.00E-002,N/A
+Frame/Divider Surface,1,Divider:DividedLite,BLOCK1B:KITCHEN_WALL_5_0_0_0_0_0_WIN,,,N/A,N/A,,6.03E-002,6.03E-002,*,N/A,N/A,2.00E-002,N/A
+HeatTransfer Surface,BLOCK1B:KITCHEN_GROUNDFLOOR_0_0_0,Floor,,CTF - ConductionTransferFunction,GROUNDFLOOR,0.264,0.248,,9.24,9.24,9.24,0.00,180.00,2.50,3.70,0.00,Ground,N/A-Ground,ASHRAETARP,NoSun,NoWind,1.00,0.00,1.00,0.00,4
+HeatTransfer Surface,BLOCK1B:KITCHEN_ROOF_1_0_0,Roof,,CTF - ConductionTransferFunction,ROOF,4.950E-002,4.904E-002,,9.24,9.24,9.24,180.00,0.00,2.50,3.70,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.00,1.00,9.83E-003,0.99,4
+Zone Surfaces,BLOCK1B:BATHROOM1,9
+HeatTransfer Surface,BLOCK1B:BATHROOM1_PARTITION_5_0_10000,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,11.10,11.10,11.10,90.00,90.00,3.70,3.00,0.00,BLOCK1B:KITCHEN_PARTITION_2_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM1_PARTITION_2_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,8.09,8.09,8.09,269.94,90.00,2.70,3.00,0.00,BLOCK1B:ROOM1_PARTITION_5_0_10003,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM1_PARTITION_3_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,1.26,3.01,1.26,269.94,90.00,1.00,3.00,0.00,BLOCK1B:CORRIDOR_PARTITION_5_0_10004,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM1_PARTITION_3_0_0_0_0_0_DOOR,Door,BLOCK1B:BATHROOM1_PARTITION_3_0_0,CTF - ConductionTransferFunction,INSIDEDOOR,5.429,5.429,,1.75,1.75,1.75,269.94,90.00,0.80,2.19,0.00,BLOCK1B:CORRIDOR_PARTITION_5_0_0_0_0_0_DOOR_10006,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM1_PARTITION_4_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,4.50,4.50,4.50,180.00,90.00,1.50,3.00,0.00,BLOCK1B:LIVINGROOM_PARTITION_11_0_10006,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM1_WALL_6_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,3.29,4.51,3.47,0.00,90.00,1.50,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.67,0.33,4
+HeatTransfer Surface,BLOCK1B:BATHROOM1_WALL_6_0_0_0_0_0_WIN,Window,BLOCK1B:BATHROOM1_WALL_6_0_0,Window5 Detailed Fenestration,TRIPLE_GLAZING,N/A,1.019,No,1.00,1.04,1.04,0.00,90.00,0.73,1.42,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.60,0.40,4
+Frame/Divider Surface,1,Frame,BLOCK1B:BATHROOM1_WALL_6_0_0_0_0_0_WIN,Window5 Detailed Fenestration,,N/A,N/A,,0.18,0.18,*,N/A,N/A,4.00E-002,N/A
+Frame/Divider Surface,1,Divider:DividedLite,BLOCK1B:BATHROOM1_WALL_6_0_0_0_0_0_WIN,,,N/A,N/A,,4.26E-002,4.26E-002,*,N/A,N/A,2.00E-002,N/A
+HeatTransfer Surface,BLOCK1B:BATHROOM1_GROUNDFLOOR_0_0_0,Floor,,CTF - ConductionTransferFunction,GROUNDFLOOR,0.264,0.248,,5.56,5.56,5.56,0.00,180.00,1.50,3.70,0.00,Ground,N/A-Ground,ASHRAETARP,NoSun,NoWind,1.00,0.00,1.00,0.00,4
+HeatTransfer Surface,BLOCK1B:BATHROOM1_ROOF_1_0_0,Roof,,CTF - ConductionTransferFunction,ROOF,4.950E-002,4.904E-002,,5.56,5.56,5.56,180.00,0.00,1.50,3.70,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.00,1.00,9.97E-003,0.99,4
+Zone Surfaces,BLOCK1B:ROOM1,10
+HeatTransfer Surface,BLOCK1B:ROOM1_PARTITION_5_0_10003,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,8.09,8.09,8.09,89.94,90.00,2.70,3.00,0.00,BLOCK1B:BATHROOM1_PARTITION_2_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM1_WALL_2_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,6.03,8.09,6.26,270.00,90.00,2.70,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM1_WALL_2_0_0_0_0_0_WIN,Window,BLOCK1B:ROOM1_WALL_2_0_0,Window5 Detailed Fenestration,TRIPLE_GLAZING,N/A,1.019,No,1.78,1.83,1.83,270.00,90.00,1.29,1.42,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.50,0.50,4
+Frame/Divider Surface,1,Frame,BLOCK1B:ROOM1_WALL_2_0_0_0_0_0_WIN,Window5 Detailed Fenestration,,N/A,N/A,,0.22,0.22,*,N/A,N/A,4.00E-002,N/A
+Frame/Divider Surface,1,Divider:DividedLite,BLOCK1B:ROOM1_WALL_2_0_0_0_0_0_WIN,,,N/A,N/A,,5.38E-002,5.38E-002,*,N/A,N/A,2.00E-002,N/A
+HeatTransfer Surface,BLOCK1B:ROOM1_PARTITION_3_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,8.26,8.26,8.26,180.00,90.00,2.75,3.00,0.00,BLOCK1B:BATHROOM_PARTITION_5_0_10007,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM1_PARTITION_4_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,2.12,3.75,2.12,180.00,90.00,1.25,3.00,0.00,BLOCK1B:CORRIDOR_PARTITION_6_0_10008,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM1_PARTITION_4_0_0_0_0_0_DOOR,Door,BLOCK1B:ROOM1_PARTITION_4_0_0,CTF - ConductionTransferFunction,INSIDEDOOR,5.429,5.429,,1.63,1.63,1.63,180.00,90.00,0.74,2.19,0.00,BLOCK1B:CORRIDOR_PARTITION_6_0_0_0_0_0_DOOR_10010,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM1_WALL_6_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,8.77,12.00,9.06,0.00,90.00,4.00,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.55,0.45,4
+HeatTransfer Surface,BLOCK1B:ROOM1_WALL_6_0_0_0_0_0_WIN,Window,BLOCK1B:ROOM1_WALL_6_0_0,Window5 Detailed Fenestration,TRIPLE_GLAZING,N/A,1.019,No,2.87,2.94,2.94,0.00,90.00,2.07,1.42,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.52,0.48,4
+Frame/Divider Surface,1,Frame,BLOCK1B:ROOM1_WALL_6_0_0_0_0_0_WIN,Window5 Detailed Fenestration,,N/A,N/A,,0.29,0.29,*,N/A,N/A,4.00E-002,N/A
+Frame/Divider Surface,1,Divider:DividedLite,BLOCK1B:ROOM1_WALL_6_0_0_0_0_0_WIN,,,N/A,N/A,,6.94E-002,6.94E-002,*,N/A,N/A,2.00E-002,N/A
+HeatTransfer Surface,BLOCK1B:ROOM1_GROUNDFLOOR_0_0_0,Floor,,CTF - ConductionTransferFunction,GROUNDFLOOR,0.264,0.248,,10.79,10.79,10.79,0.00,180.00,4.00,2.70,0.00,Ground,N/A-Ground,ASHRAETARP,NoSun,NoWind,1.00,0.00,1.00,0.00,4
+HeatTransfer Surface,BLOCK1B:ROOM1_ROOF_1_0_0,Roof,,CTF - ConductionTransferFunction,ROOF,4.950E-002,4.904E-002,,10.79,10.79,10.79,180.00,0.00,4.00,2.70,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.00,1.00,3.53E-003,1.00,4
+Zone Surfaces,BLOCK1B:CORRIDOR,12
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_5_0_10004,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,1.26,3.01,1.26,89.94,90.00,1.00,3.00,0.00,BLOCK1B:BATHROOM1_PARTITION_3_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_5_0_0_0_0_0_DOOR_10006,Door,BLOCK1B:CORRIDOR_PARTITION_5_0_10004,CTF - ConductionTransferFunction,INSIDEDOOR_REV,5.429,5.429,,1.75,1.75,1.75,89.94,90.00,0.80,2.19,0.00,BLOCK1B:BATHROOM1_PARTITION_3_0_0_0_0_0_DOOR,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_6_0_10008,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,2.12,3.75,2.12,0.00,90.00,1.25,3.00,0.00,BLOCK1B:ROOM1_PARTITION_4_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_6_0_0_0_0_0_DOOR_10010,Door,BLOCK1B:CORRIDOR_PARTITION_6_0_10008,CTF - ConductionTransferFunction,INSIDEDOOR_REV,5.429,5.429,,1.63,1.63,1.63,0.00,90.00,0.74,2.19,0.00,BLOCK1B:ROOM1_PARTITION_4_0_0_0_0_0_DOOR,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_2_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,4.48,6.00,4.48,270.00,90.00,2.00,3.00,0.00,BLOCK1B:BATHROOM_PARTITION_4_0_10010,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_2_0_0_0_0_0_DOOR,Door,BLOCK1B:CORRIDOR_PARTITION_2_0_0,CTF - ConductionTransferFunction,INSIDEDOOR,5.429,5.429,,1.52,1.52,1.52,270.00,90.00,0.69,2.19,0.00,BLOCK1B:BATHROOM_PARTITION_4_0_0_0_0_0_DOOR_10012,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_3_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,2.22,3.75,2.22,180.00,90.00,1.25,3.00,0.00,BLOCK1B:ROOM_PARTITION_5_0_10012,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_3_0_0_0_0_0_DOOR,Door,BLOCK1B:CORRIDOR_PARTITION_3_0_0,CTF - ConductionTransferFunction,INSIDEDOOR,5.429,5.429,,1.53,1.53,1.53,180.00,90.00,0.69,2.20,0.00,BLOCK1B:ROOM_PARTITION_5_0_0_0_0_0_DOOR_10014,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_4_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,1.25,2.99,1.25,90.04,90.00,1.00,3.00,0.00,BLOCK1B:LIVINGROOM_PARTITION_2_0_10014,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_PARTITION_4_0_0_0_0_0_DOOR,Door,BLOCK1B:CORRIDOR_PARTITION_4_0_0,CTF - ConductionTransferFunction,INSIDEDOOR,5.429,5.429,,1.74,1.74,1.74,90.04,90.00,0.79,2.20,0.00,BLOCK1B:LIVINGROOM_PARTITION_2_0_0_0_0_0_DOOR_10016,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_GROUNDFLOOR_0_0_0,Floor,,CTF - ConductionTransferFunction,GROUNDFLOOR,0.264,0.248,,2.50,2.50,2.50,0.00,180.00,1.25,2.00,0.00,Ground,N/A-Ground,ASHRAETARP,NoSun,NoWind,1.00,0.00,1.00,0.00,4
+HeatTransfer Surface,BLOCK1B:CORRIDOR_ROOF_1_0_0,Roof,,CTF - ConductionTransferFunction,ROOF,4.950E-002,4.904E-002,,2.50,2.50,2.50,180.00,0.00,1.25,2.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.00,1.00,3.82E-006,1.00,4
+Zone Surfaces,BLOCK1B:BATHROOM,8
+HeatTransfer Surface,BLOCK1B:BATHROOM_PARTITION_5_0_10007,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,8.26,8.26,8.26,0.00,90.00,2.75,3.00,0.00,BLOCK1B:ROOM1_PARTITION_3_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM_PARTITION_4_0_10010,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,4.48,6.00,4.48,90.00,90.00,2.00,3.00,0.00,BLOCK1B:CORRIDOR_PARTITION_2_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM_PARTITION_4_0_0_0_0_0_DOOR_10012,Door,BLOCK1B:BATHROOM_PARTITION_4_0_10010,CTF - ConductionTransferFunction,INSIDEDOOR_REV,5.429,5.429,,1.52,1.52,1.52,90.00,90.00,0.69,2.19,0.00,BLOCK1B:CORRIDOR_PARTITION_2_0_0_0_0_0_DOOR,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM_WALL_2_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,4.33,6.00,4.54,270.00,90.00,2.00,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM_WALL_2_0_0_0_0_0_WIN,Window,BLOCK1B:BATHROOM_WALL_2_0_0,Window5 Detailed Fenestration,TRIPLE_GLAZING,N/A,1.019,No,1.41,1.46,1.46,270.00,90.00,1.03,1.42,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.50,0.50,4
+Frame/Divider Surface,1,Frame,BLOCK1B:BATHROOM_WALL_2_0_0_0_0_0_WIN,Window5 Detailed Fenestration,,N/A,N/A,,0.20,0.20,*,N/A,N/A,4.00E-002,N/A
+Frame/Divider Surface,1,Divider:DividedLite,BLOCK1B:BATHROOM_WALL_2_0_0_0_0_0_WIN,,,N/A,N/A,,4.86E-002,4.86E-002,*,N/A,N/A,2.00E-002,N/A
+HeatTransfer Surface,BLOCK1B:BATHROOM_PARTITION_3_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,8.26,8.26,8.26,180.00,90.00,2.75,3.00,0.00,BLOCK1B:ROOM_PARTITION_6_0_10016,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:BATHROOM_GROUNDFLOOR_0_0_0,Floor,,CTF - ConductionTransferFunction,GROUNDFLOOR,0.264,0.248,,5.51,5.51,5.51,0.00,180.00,2.75,2.00,0.00,Ground,N/A-Ground,ASHRAETARP,NoSun,NoWind,1.00,0.00,1.00,0.00,4
+HeatTransfer Surface,BLOCK1B:BATHROOM_ROOF_1_0_0,Roof,,CTF - ConductionTransferFunction,ROOF,4.950E-002,4.904E-002,,5.51,5.51,5.51,180.00,0.00,2.75,2.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.00,1.00,1.12E-006,1.00,4
+Zone Surfaces,BLOCK1B:LIVINGROOM,21
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_PARTITION_10_0_10001,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,5.84,7.49,5.84,0.00,90.00,2.50,3.00,0.00,BLOCK1B:KITCHEN_PARTITION_3_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_PARTITION_10_0_0_0_0_0_DOOR_10003,Door,BLOCK1B:LIVINGROOM_PARTITION_10_0_10001,CTF - ConductionTransferFunction,INSIDEDOOR_REV,5.429,5.429,,1.65,1.65,1.65,0.00,90.00,0.75,2.20,0.00,BLOCK1B:KITCHEN_PARTITION_3_0_0_0_0_0_DOOR,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_PARTITION_11_0_10006,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,4.50,4.50,4.50,0.00,90.00,1.50,3.00,0.00,BLOCK1B:BATHROOM1_PARTITION_4_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_PARTITION_2_0_10014,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,1.25,2.99,1.25,270.04,90.00,1.00,3.00,0.00,BLOCK1B:CORRIDOR_PARTITION_4_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_PARTITION_2_0_0_0_0_0_DOOR_10016,Door,BLOCK1B:LIVINGROOM_PARTITION_2_0_10014,CTF - ConductionTransferFunction,INSIDEDOOR_REV,5.429,5.429,,1.74,1.74,1.74,270.04,90.00,0.79,2.20,0.00,BLOCK1B:CORRIDOR_PARTITION_4_0_0_0_0_0_DOOR,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_PARTITION_3_0_0,Wall,,CTF - ConductionTransferFunction,PARTITION,2.857,2.001,,12.91,12.91,12.91,270.04,90.00,4.30,3.00,0.00,BLOCK1B:ROOM_PARTITION_4_0_10017,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_WALL_4_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,11.04,15.75,11.57,180.00,90.00,5.25,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.67,0.33,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_WALL_4_0_0_0_0_1_WIN,Window,BLOCK1B:LIVINGROOM_WALL_4_0_0,Window5 Detailed Fenestration,TRIPLE_GLAZING,N/A,1.019,No,2.58,2.66,2.66,180.00,90.00,2.61,1.02,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.61,0.39,4
+Frame/Divider Surface,1,Frame,BLOCK1B:LIVINGROOM_WALL_4_0_0_0_0_1_WIN,Window5 Detailed Fenestration,,N/A,N/A,,0.30,0.30,*,N/A,N/A,4.00E-002,N/A
+Frame/Divider Surface,1,Divider:DividedLite,BLOCK1B:LIVINGROOM_WALL_4_0_0_0_0_1_WIN,,,N/A,N/A,,7.22E-002,7.22E-002,*,N/A,N/A,2.00E-002,N/A
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_WALL_4_0_0_1_0_0_WIN,Window,BLOCK1B:LIVINGROOM_WALL_4_0_0,Window5 Detailed Fenestration,TRIPLE_GLAZING,N/A,1.019,No,1.46,1.52,1.52,180.00,90.00,0.72,2.11,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.57,0.43,4
+Frame/Divider Surface,1,Frame,BLOCK1B:LIVINGROOM_WALL_4_0_0_1_0_0_WIN,Window5 Detailed Fenestration,,N/A,N/A,,0.23,0.23,*,N/A,N/A,4.00E-002,N/A
+Frame/Divider Surface,1,Divider:DividedLite,BLOCK1B:LIVINGROOM_WALL_4_0_0_1_0_0_WIN,,,N/A,N/A,,5.62E-002,5.62E-002,*,N/A,N/A,2.00E-002,N/A
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_WALL_5_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,3.60,3.60,3.60,90.00,90.00,1.20,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.56,0.44,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_WALL_6_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,3.00,3.00,3.00,0.00,90.00,1.00,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.67,0.33,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_WALL_7_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,6.00,6.00,6.00,90.00,90.00,2.00,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.59,0.41,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_WALL_8_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,0.75,0.75,0.75,0.00,90.00,0.25,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.70,0.30,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_WALL_9_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,4.45,6.30,4.45,90.00,90.00,2.10,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.54,0.46,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_WALL_9_0_0_0_0_0_DOOR,Door,BLOCK1B:LIVINGROOM_WALL_9_0_0,CTF - ConductionTransferFunction,EXTERNALDOOR,5.429,5.429,,1.85,1.85,1.85,90.00,90.00,0.84,2.19,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.52,0.48,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_GROUNDFLOOR_0_0_0,Floor,,CTF - ConductionTransferFunction,GROUNDFLOOR,0.264,0.248,,8.39,8.39,8.39,0.00,180.00,4.00,2.10,0.00,Ground,N/A-Ground,ASHRAETARP,NoSun,NoWind,1.00,0.00,1.00,0.00,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_GROUNDFLOOR_0_0_1,Floor,,CTF - ConductionTransferFunction,GROUNDFLOOR,0.264,0.248,,8.50,8.50,8.50,0.00,180.00,4.25,2.00,0.00,Ground,N/A-Ground,ASHRAETARP,NoSun,NoWind,1.00,0.00,1.00,0.00,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_GROUNDFLOOR_0_0_2,Floor,,CTF - ConductionTransferFunction,GROUNDFLOOR,0.264,0.248,,6.30,6.30,6.30,0.00,180.00,5.25,1.20,0.00,Ground,N/A-Ground,ASHRAETARP,NoSun,NoWind,1.00,0.00,1.00,0.00,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_ROOF_1_0_0,Roof,,CTF - ConductionTransferFunction,ROOF,4.950E-002,4.904E-002,,1.20,1.20,1.20,180.00,0.00,1.00,1.20,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.00,1.00,3.07E-002,0.97,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_ROOF_1_0_1,Roof,,CTF - ConductionTransferFunction,ROOF,4.950E-002,4.904E-002,,0.80,0.80,0.80,180.00,0.00,0.25,3.20,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.00,1.00,1.15E-002,0.99,4
+HeatTransfer Surface,BLOCK1B:LIVINGROOM_ROOF_1_0_2,Roof,,CTF - ConductionTransferFunction,ROOF,4.950E-002,4.904E-002,,21.19,21.19,21.19,180.00,0.00,4.00,5.30,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.00,1.00,6.56E-003,0.99,4
+Zone Surfaces,BLOCK1B:ROOM,10
+HeatTransfer Surface,BLOCK1B:ROOM_PARTITION_5_0_10012,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,2.22,3.75,2.22,0.00,90.00,1.25,3.00,0.00,BLOCK1B:CORRIDOR_PARTITION_3_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM_PARTITION_5_0_0_0_0_0_DOOR_10014,Door,BLOCK1B:ROOM_PARTITION_5_0_10012,CTF - ConductionTransferFunction,INSIDEDOOR_REV,5.429,5.429,,1.53,1.53,1.53,0.00,90.00,0.69,2.20,0.00,BLOCK1B:CORRIDOR_PARTITION_3_0_0_0_0_0_DOOR,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM_PARTITION_6_0_10016,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,8.26,8.26,8.26,0.00,90.00,2.75,3.00,0.00,BLOCK1B:BATHROOM_PARTITION_3_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM_PARTITION_4_0_10017,Wall,,CTF - ConductionTransferFunction,PARTITION_REV,2.857,2.001,,12.91,12.91,12.91,90.04,90.00,4.30,3.00,0.00,BLOCK1B:LIVINGROOM_PARTITION_3_0_0,Other/Same Surface Int Conv,ASHRAETARP,NoSun,NoWind,0.00,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM_WALL_2_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,9.41,12.91,9.71,270.00,90.00,4.30,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.50,0.50,4
+HeatTransfer Surface,BLOCK1B:ROOM_WALL_2_0_0_0_0_0_WIN,Window,BLOCK1B:ROOM_WALL_2_0_0,Window5 Detailed Fenestration,TRIPLE_GLAZING,N/A,1.019,No,3.13,3.20,3.20,270.00,90.00,2.25,1.42,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.50,0.50,4
+Frame/Divider Surface,1,Frame,BLOCK1B:ROOM_WALL_2_0_0_0_0_0_WIN,Window5 Detailed Fenestration,,N/A,N/A,,0.30,0.30,*,N/A,N/A,4.00E-002,N/A
+Frame/Divider Surface,1,Divider:DividedLite,BLOCK1B:ROOM_WALL_2_0_0_0_0_0_WIN,,,N/A,N/A,,7.31E-002,7.31E-002,*,N/A,N/A,2.00E-002,N/A
+HeatTransfer Surface,BLOCK1B:ROOM_WALL_3_0_0,Wall,,CTF - ConductionTransferFunction,EXTERNALWALLBO.287,7.622E-002,7.536E-002,,8.77,12.00,9.06,180.00,90.00,4.00,3.00,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.51,0.49,4
+HeatTransfer Surface,BLOCK1B:ROOM_WALL_3_0_0_0_0_0_WIN,Window,BLOCK1B:ROOM_WALL_3_0_0,Window5 Detailed Fenestration,TRIPLE_GLAZING,N/A,1.019,No,2.87,2.94,2.94,180.00,90.00,2.07,1.42,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.50,0.50,0.51,0.49,4
+Frame/Divider Surface,1,Frame,BLOCK1B:ROOM_WALL_3_0_0_0_0_0_WIN,Window5 Detailed Fenestration,,N/A,N/A,,0.29,0.29,*,N/A,N/A,4.00E-002,N/A
+Frame/Divider Surface,1,Divider:DividedLite,BLOCK1B:ROOM_WALL_3_0_0_0_0_0_WIN,,,N/A,N/A,,6.94E-002,6.94E-002,*,N/A,N/A,2.00E-002,N/A
+HeatTransfer Surface,BLOCK1B:ROOM_GROUNDFLOOR_0_0_0,Floor,,CTF - ConductionTransferFunction,GROUNDFLOOR,0.264,0.248,,17.22,17.22,17.22,0.00,180.00,4.00,4.30,0.00,Ground,N/A-Ground,ASHRAETARP,NoSun,NoWind,1.00,0.00,1.00,0.00,4
+HeatTransfer Surface,BLOCK1B:ROOM_ROOF_1_0_0,Roof,,CTF - ConductionTransferFunction,ROOF,4.950E-002,4.904E-002,,17.22,17.22,17.22,180.00,0.00,4.00,4.30,0.00,ExternalEnvironment,DOE-2,ASHRAETARP,SunExposed,WindExposed,0.00,1.00,3.12E-005,1.00,4
+! <Environment>,Environment Name,Environment Type, Start Date, End Date, Start DayOfWeek, Duration {#days}, Source:Start DayOfWeek,  Use Daylight Saving, Use Holidays, Apply Weekend Holiday Rule,  Use Rain Values, Use Snow Values, Sky Temperature Model
+! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
+! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
+! <Environment:WarmupDays>, NumberofWarmupDays
+Environment,YEAR_SIMULATION,WeatherFileRunPeriod,01/01/2017,12/31/2017,Sunday,365,Use RunPeriod Specified Day,No,No,Yes,Yes,Yes,Clark and Allen
+Environment:Daylight Saving,Yes,InputFile,03/26,10/29
+Environment:WarmupDays,  6
+! <Warmup Convergence Information>,Zone Name,Environment Type/Name,Average Warmup Temperature Difference {deltaC},Std Dev Warmup Temperature Difference {deltaC},Max Temperature Pass/Fail Convergence,Min Temperature Pass/Fail Convergence,Average Warmup Load Difference {W},Std Dev Warmup Load Difference {W},Heating Load Pass/Fail Convergence,Cooling Load Pass/Fail Convergence
+ Warmup Convergence Information,BLOCK1B:KITCHEN,RunPeriod: YEAR_SIMULATION,0.2432816406,0.5375149009,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,BLOCK1B:BATHROOM1,RunPeriod: YEAR_SIMULATION,0.1058460802,0.1064798733,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,BLOCK1B:ROOM1,RunPeriod: YEAR_SIMULATION,0.1347468293,0.1236845326,Pass,Pass,4.5292087490E-002,0.1647313091,Pass,Pass
+ Warmup Convergence Information,BLOCK1B:CORRIDOR,RunPeriod: YEAR_SIMULATION,0.1137062428,9.3339574600E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,BLOCK1B:BATHROOM,RunPeriod: YEAR_SIMULATION,0.1823585846,0.1536959403,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,BLOCK1B:LIVINGROOM,RunPeriod: YEAR_SIMULATION,0.2532832729,0.1839183597,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,BLOCK1B:ROOM,RunPeriod: YEAR_SIMULATION,0.2774625739,0.2224563825,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
+Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
+End of Data
