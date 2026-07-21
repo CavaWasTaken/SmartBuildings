@@ -181,9 +181,3 @@ Make sure EnergyPlus is installed and accessible. For the Telegram bot, set your
 ```
 TELEGRAM_BOT_TOKEN=your_token_here
 ```
-
----
-
-## 📄 License
-
-This project is open source. See [LICENSE](LICENSE) for details.
